@@ -1,0 +1,13 @@
+  <script type="text/javascript">
+    $(document).ready( function () {
+      // 延时清除掉成功、失败提示信息
+      if ($('.ui.success.message').length > 0) {
+        $('.ui.success.message').fadeOut(1000)
+      } else if ($('.ui.error.message').length > 0) {
+        $('.ui.error.message').fadeOut(1000)
+      }   
+
+    })
+  </script>
+  </body>
+</html>

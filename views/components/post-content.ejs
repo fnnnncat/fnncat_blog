@@ -1,0 +1,44 @@
+<div class="post-content">
+  <% if (post.icon=="icon-riqing"){%>
+      <i class="iconfont tag-sky-icon"> &#xe601;</i>
+   <% }else if(post.icon=="icon-yujiaxue"){ console.log("sssss")%>
+      <i class="iconfont tag-sky-icon"> &#xe608;</i>
+   <% }else if(post.icon=="icon-yanzhongmai"){%>
+       <i class="iconfont tag-sky-icon">&#xe62a;</i>
+   <% }else if(post.icon=="icon-teqiangnongwu"){%>
+   <i class="iconfont tag-sky-icon"> &#xe626;</i>
+   <% }else if(post.icon=="icon-zhenxue"){%>
+   <i class="iconfont tag-sky-icon">&#xe609;</i>
+   <% }else if(post.icon=="icon-yeqing"){%>
+   <i class="iconfont tag-sky-icon"> &#xe602;</i>
+   <% }%>
+ 
+  <h3><a href="/posts/<%= post._id %>"><%= post.title %></a></h3>
+  <div class="ui grid">
+    <div class="eight wide column">
+      <div class="ui">
+        <pre><%- post.content %></pre>
+        <div>
+          <span class="tag"><%= post.created_at %></span>
+          <span class="post-tag">前端基础</span><span class="post-tag">生活杂谈</span>
+          <span class="tag right">
+            <span>浏览(<%= post.pv %>)</span>
+            <span>留言(<%= post.commentsCount %>)</span>
+            
+            <% if (user && post.author._id && user._id.toString() === post.author._id.toString()) { %>
+              <div class="ui inline dropdown">
+                <div class="text"></div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                  <div class="item"><a href="/posts/<%= post._id %>/edit">编辑</a></div>
+                  <div class="item"><a href="/posts/<%= post._id %>/remove">删除</a></div>
+                </div>
+              </div>
+            <% } %>
+
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
