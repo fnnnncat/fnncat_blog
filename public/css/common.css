@@ -204,7 +204,7 @@ body .fn-hide {display:none;}
 .layout-frame > div.layout-center { clear: both; display: inline-block; padding: 4px 20px 35px 20px; }
 .layout-frame > div.layout-center > div { margin: 35px 12px 0px 20px; }
 html{
-	background:linear-gradient(#89b8dccf, #275691);
+	background:linear-gradient(#6e7275cf, #010001);;
 }
 .all-content{	
 	margin: 0 auto;
