@@ -11,13 +11,14 @@
   </div>
 </div>
 <script>
-	//首页字体动画
+  $(document).ready(function(){
+      //首页字体动画
 $(".autotype").animatext({
         speed: 150, 
-		effect: 'flipInY',
-		reverse: false
+    effect: 'flipInY',
+    reverse: false
 
-	});
+  });
     //布局动画
 setTimeout(function(){
   $(".all-content").css("position","inherit");
@@ -31,6 +32,8 @@ setTimeout(function(){
   $(".post-content").fadeIn();
 
 },3000);
+  })
+
 
 </script>
 
