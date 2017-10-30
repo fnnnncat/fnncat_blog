@@ -22,7 +22,7 @@ $(".autotype").animatext({
 setTimeout(function(){
   $(".all-content").css("position","inherit");
   $(".video").css("height","300px");
-  $(".layout-frame").css("background","linear-gradient(rgb(151, 190, 222), #f1f1f1)")
+  $(".layout-frame").css("background","linear-gradient(#010001, rgb(124, 128, 130))")
   $(".layout-frame").animate( { width: "80%", height: "1600px",marginTop:"120px",paddingBottom: "500px",opacity:".8"},"slow");
   $("html").animate({height:"2000px"},"slow");
   $(".center-content").animate({marginTop:"50px",marginLeft:"60px"},{ duration: 2000, easing: "linear" });
@@ -33,7 +33,7 @@ setTimeout(function(){
 
 </script>
 
-<video class="video" autoplay="autoplay" width="100%" >
+<video class="video" autoplay="autoplay" loop="loop" width="100%" >
   <source src="/video/sky.mp4" type="video/mp4" />
 Your browser does not support the video tag.
 </video>
