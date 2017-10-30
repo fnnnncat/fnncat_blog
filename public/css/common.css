@@ -261,6 +261,8 @@ html{
 }
 .post-content .grid{
    padding:20px;
+   height: 280px;
+   overflow: hidden;
 }
 .post-content .tag-sky-icon{
     position: relative;
