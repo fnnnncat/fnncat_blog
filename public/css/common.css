@@ -293,3 +293,11 @@ html{
     border-radius: 2px;
     color: #999;
 }
+.loadding-container{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: black;
+  color: white;
+}
