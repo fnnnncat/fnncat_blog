@@ -10,11 +10,24 @@
 <% }) %>   
   </div>
 </div>
+<video class="video" autoplay="autoplay" loop="loop" width="100%" >
+  <source src="/video/sky.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+<div class="loadding-container">
+  <p>
+     我是个loading
+  </p>
+  <p>
+    我在的等我的素材加载出来, 给我三秒，如果不行你就刷新吧
+  </p>
+</div>
 <script>
   $(document).ready(function(){
-      //首页字体动画
-$(".autotype").animatext({
-        speed: 150, 
+setTimeout(function(){
+  $(".loadding-container").hide();
+  $(".autotype").animatext({
+    speed: 150, 
     effect: 'flipInY',
     reverse: false
 
@@ -31,15 +44,16 @@ setTimeout(function(){
 
   $(".post-content").fadeIn();
 
-},3000);
+   },3500);
+},3000)
+      //首页字体动画
+
   })
+
 
 
 </script>
 
-<video class="video" autoplay="autoplay" loop="loop" width="100%" >
-  <source src="/video/sky.mp4" type="video/mp4" />
-Your browser does not support the video tag.
-</video>
+
 
 <%- include('footer') %>
