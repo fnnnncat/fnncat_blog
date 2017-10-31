@@ -1,8 +1,12 @@
-<div class="post-detail">
-  <div class="ui grid">
-    <div class="eight wide column">
-      <div class="ui segment">
-        <h3><a href="/posts/<%= post._id %>"><%= post.title %></a></h3>
+<div class="fiexddiv">
+  <div class="w1200 artmain">
+<div class="l-content">
+  <div class="guide">
+    <a href="/">首页</a>&gt;<a href="/article">文章</a> &gt;<a href="/posts/<%= post._id %>"><%= post.title %></a>
+  </div>
+  <div>
+    <h1 class="title"><%= post.title %></h1>
+        <img  class="detial-img-title" src="/img/static.jpg">
         <pre><%- post.content %></pre>
         <div>
           <span class="tag"><%= post.created_at %></span>
@@ -22,7 +26,31 @@
             <% } %>
           </span>
         </div>
-      </div>
     </div>
   </div>
+
+ <div class="r-content">
+   <div class="search">
+     <input type="text" placeholder="文章搜索/回车键搜索" class="searchW">
+     <button class="searchB">搜索</button>
+   </div>
+   <div class="allTag">
+    <h4>标签</h4>
+    <div class="ovh">
+    <a href="" class="cor0">nodejs</a>
+    <a href="" class="cor1">个人收藏</a>
+    <a href="" class="cor2">随笔</a>
+    <a href="" class="cor3">canvas</a>
+    <a href="" class="cor4">css3</a>
+    <a href="" class="cor5">javascript</a>
+    <a href="" class="cor6">threejs</a>
+    <a href="" class="cor7">html5</a>
+    <a href="" class="cor8">分享</a>
+    <a href="" class="cor9">电影</a>
+    <a href="" class="cor10">文学</a>
+    </div>
+  </div>
+</div>
+</div>
+</div>
 </div>

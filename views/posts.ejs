@@ -1,65 +1,48 @@
 
 <%- include('header') %>
-<div class="all-content">
+<div class="fiexddiv">
+  <div class="w1200 artmain">
+  
+
+<div class="l-content">
+  <div class="guide">
+    <a href="/">首页</a>&gt;<a href="/article">文章</a> 
+  </div>
   <div class="layout-frame">
-	 <div class="center-content">
-       <h4 class="autotype header_font">HELLO, I'm Fnncat</h4>
-     </div>
      <% posts.forEach(function (post) { %>
   <%- include('components/post-content', { post: post }) %>
 <% }) %>   
+</div>
+<div class="pagepagin-list">
+    
+</div>
+
+ <div class="r-content">
+   <div class="search">
+     <input type="text" placeholder="文章搜索/回车键搜索" class="searchW">
+     <button class="searchB">搜索</button>
+   </div>
+   <div class="allTag">
+    <h4>标签</h4>
+    <div class="ovh">
+    <a href="" class="cor0">nodejs</a>
+    <a href="" class="cor1">个人收藏</a>
+    <a href="" class="cor2">随笔</a>
+    <a href="" class="cor3">canvas</a>
+    <a href="" class="cor4">css3</a>
+    <a href="" class="cor5">javascript</a>
+    <a href="" class="cor6">threejs</a>
+    <a href="" class="cor7">html5</a>
+    <a href="" class="cor8">分享</a>
+    <a href="" class="cor9">电影</a>
+    <a href="" class="cor10">文学</a>
+    </div>
   </div>
+     <div class="else-content">
+      
+    </div>
 </div>
-<video id="video" class="video" loop="loop" width="100%" >
-  <source src="/video/sky.mp4" type="video/mp4" />
-Your browser does not support the video tag.
-</video>
-<div class="loadding-container">
-  <p>
-     我是个loading
-  </p>
-  <p>
-    我在的等我的素材加载出来, 给我三秒，如果不行你就刷新吧
-  </p>
 </div>
-<script>
-  $(document).ready(function(){
-setTimeout(function(){
-  var myVid=document.getElementById("video");
-  myVid.addEventListener('loadedmetadata',function(){
-    alert("ssss");
-  });
-  
-  myVid.play();
-  $(".loadding-container").hide();
-  $(".autotype").animatext({
-    speed: 150, 
-    effect: 'flipInY',
-    reverse: false
-
-  });
-    //布局动画
-setTimeout(function(){
-  $(".all-content").css("position","inherit");
-  $(".video").css("height","300px");
-  $(".layout-frame").css("background","linear-gradient(#010001, rgb(124, 128, 130))")
-  $(".layout-frame").animate( { width: "80%", height: "1600px",marginTop:"120px",paddingTop:"30px",paddingBottom: "500px",opacity:".8"},"slow");
-  $("html").animate({height:"2000px"},"slow");
-  $(".center-content").animate({marginTop:"50px",marginLeft:"60px"},{ duration: 2000, easing: "linear" });
-  $(".header_font").css("text-align","left");
-
-  $(".post-content").fadeIn();
-
-   },3500);
-},3000)
-      //首页字体动画
-
-  })
-
-
-
-</script>
-
-
+</div>
 
 <%- include('footer') %>

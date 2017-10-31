@@ -16,19 +16,6 @@ body {
   float: right;
 }
 
-/* ---------- nav ---------- */
-
-.nav {
-  margin-bottom: 20px;
-  color: #999;
-  text-align: center;
-}
-
-.nav h1 {
-  color: #4fc08d;
-  display: inline-block;
-  margin: 10px 0;
-}
 
 /* ---------- nav-setting ---------- */
 

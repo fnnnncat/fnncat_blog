@@ -22,10 +22,9 @@
         padding-left:20px
 }
 
-html,body{height: 100%;width: 100%;font-family: web-font;}
+html,body{height: 100%;width: 100%;font-family: web-font;background: black}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: baseline; }
 
-html { background: #ecedf1; line-height: 1; }
 
 /* 要注意表单元素并不继承父级 font 的问题 */
 body,button,input,select,textarea {font:12px/1.5  "Microsoft Yahei",tahoma,arial,"Hiragino Sans GB",\5b8b\4f53;}
@@ -182,6 +181,7 @@ body .fn-hide {display:none;}
 .w400 { width:400px; }
 .w500 { width:500px; }
 .w600 { width:600px; }
+.w1200{width: 1200px;margin: 0 auto;overflow: hidden;}
 
 .h30 { height:30px; }
 .h35 { height:35px; }
@@ -196,95 +196,117 @@ body .fn-hide {display:none;}
 .line-height-20{ line-height: 20px;}
 .line-height-30{ line-height: 30px;}
 /*公用布局样式*/
-.layout-frame,.layout-framex { margin-bottom: 20px; background: transparent;height: 100%;margin: 0 auto ;z-index: 3;}
+.layout-frame,.layout-framex { margin-bottom: 20px; background: transparent;height: 100%;margin: 0 auto ;z-index: 3;background: black}
 .layout-frame { width: 100%; }
 .center-content{width: 50%;margin: 0 auto; margin-bottom: 80px;}
 .layout-framex { width: 49%; }
-.layout-frame > div.layout-title,.layout-framex > div.layout-title { height: 46px; line-height: 46px; padding-left: 20px; background: #fafafa; border-bottom: 1px solid #f1f1f1; font-size: 14px; color: #2a2a2a; font-weight: bold; }
-.layout-frame > div.layout-center { clear: both; display: inline-block; padding: 4px 20px 35px 20px; }
-.layout-frame > div.layout-center > div { margin: 35px 12px 0px 20px; }
-html{
-	background:linear-gradient(#6e7275cf, #010001);;
-}
-.all-content{	
-	margin: 0 auto;
+/*首页*/
+header {
+    z-index: 999;
+    width: 100%;
+    background: rgba(0,0,0,.3);
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
-.header_font{
-	font-family: web-font;
-	transform: translate(0em, 0em);
-    color: red;
-    display: inline-block;
+header nav{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 17px 0;
     position: relative;
     text-align: center;
-    font-size: 50px;
-    opacity: .8;
+}
+header nav .nav-item{
     color: white;
-    width: 100%; 
+    margin: 0 8px;
+    padding: 11px;
+    font-size: 15px;
+}
+.artmain{
+    margin-top: 57px;
+}
+
+.l-content{
+   float: left;
+    width: 770px;
+    margin-top: 8px;
+}
+.l-content > div{
+    overflow: hidden;
+    background: rgba(255,255,255,.8);
+    padding-top: 21px;
+    padding-bottom: 21px;
+    border-radius: 10px;
+    margin: 21px 0;
+    margin-left: 7px;
+    transition: all 0.28s;
+}
+.l-content .guide a {
+    padding: 0 11px;
+    color: rgb(55,55,55);
+    font-size: 15px;
+    font-weight: bold;
+}
+.l-content .post-content a>img{
+    float: left;
+    width: 23%;
+    padding-left: 25px;
+}
+.r-content{
+    width: 410px;
+    margin-right: 5px;
+    float: right;
+    margin-top: 8px;
+}
+
+.post-content{
+	overflow: hidden;
+    background: rgba(255,255,255,.8);
+    padding-top: 21px;
+    padding-bottom: 21px;
+    border-radius: 10px;
+    margin: 21px 0;
+    margin-left: 7px;
+    transition: all 0.28s;
+}
+.post-content  .cont{
+	float: right;
+    width: 65%;
+    margin-left: 6%;
+}
+.cont h2 {
+    margin-bottom: 12px;
+}
+em.recommend {
+    font-size: 14px;
+    margin-right: 5px;
+    color: rgb(180,0,0);
+}
+.cont h2 a {
+    padding-bottom: 18px;
+    padding-top: 18px;
+    color: rgb(66,66,66);
+    transition: all 0.1s;
+}
+.cont>div {
+    height: 90px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cont>div >p {
+    color: rgba(55,55,55,.8);
+    font-size: 15px;
 
 }
-.post-content{
-	display: none;
+.post-content-footer{
+    margin-top: 110px;
+    padding-left: 270px;
+    padding-right: 30px;
 }
-.all-content{
-	position: absolute;
-	top: 120px;
-	width: 100%;
-}
-.video{
-	height:100%;
-	object-fit: cover;
-}
-.post-content{
-	width: 80%;
-	height: 340px;
-	margin: 0 auto;
-	margin-top: 20px;
-    border-top: 2px dashed white;
-}
-.post-content  h3{
-	font-family: web-font;
-	font-size: 26px;
-    color: white;
-}
-.post-content  h3 :hover{
-   background-color: #92b9da;
-   color: white;
-}
-.post-content h3 a{
-    background-color: white;
-    color: #92b9da;
-    text-shadow: 1px 1px #666;
-    font-weight: 400;
-    display: inline-block;
-    padding: 0.4rem 1rem;
-}
-.post-content .grid{
-   padding:20px;
-   height: 280px;
-   overflow: hidden;
-}
-.post-content .tag-sky-icon{
-    position: relative;
-    top: -26px;
-    color: white;
-    left: -25px;
-    font-size: 30px;
-}
-.ui pre p{
-	font-family: Lato,"Microsoft YaHei",sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.8em;
-    margin: 1em 0;
-    color: #333;
-    text-indent: 2em;
-    font-weight: 400;
-    color: white;
-    white-space: pre-wrap;
-    height: 120px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-}
+
 .post-tag{
 	font-size: 12px;
     margin-right: 10px;
@@ -293,11 +315,109 @@ html{
     border-radius: 2px;
     color: #999;
 }
-.loadding-container{
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  background-color: black;
-  color: white;
+.pagepagin-list{
+    height: 60px;
 }
+.r-content{
+    width: 410px;
+    margin-right: 5px;
+    float: right;
+    margin-top: 8px;
+}
+.r-content > div{
+    overflow: hidden;
+    background: rgba(255,255,255,.8);
+    padding-top: 21px;
+    padding-bottom: 21px;
+    border-radius: 10px;
+    margin: 21px 0;
+    margin-left: 7px;
+    transition: all 0.28s;
+}
+.r-content .search{
+    padding: 17px 0;
+}
+.searchW {
+    outline: none;
+    border: 1px solid rgb(88,88,88);
+    border-radius: 19px;
+    height: 27px;
+    text-indent: 15px;
+    margin-left: 56px;
+    position: relative;
+    z-index: 3;
+    color: rgb(33,29,39);
+    width: 172px;
+    float: left;
+}
+.searchB {
+    float: left;
+    border-radius: 0 19px 19px 0;
+    outline: none;
+    border: 1px solid rgb(88,88,88);
+    height: 30px;
+    padding: 0 15px;
+    margin-left: -18px;
+    position: relative;
+    text-indent: 12px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.allTag h4, .rGuide h4 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+.allTag div {
+    padding: 0 15px;
+}
+.ovh {
+    overflow: hidden;
+}
+.allTag div a {
+    float: left;
+    padding: 3px 8px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 13px;
+    color: white;
+    border-radius: 8px;
+    margin: 5px 8px;
+}
+a.cor0 {
+    background: rgb(77,198,154);
+}a.cor1 {
+    background: rgb(103,64,165);
+}a.cor2 {
+    background: rgb(110,210,50);
+}a.cor3 {
+    background: rgb(197,23,137);
+}a.cor4 {
+    background: rgb(120,200,200);
+}a.cor5 {
+    background: rgb(77,158,254);
+}a.cor6 {
+    background: rgb(103,64,165);
+}a.cor7 {
+    background: rgb(173,64,65);
+}a.cor8 {
+    background: rgb(13,15,114);
+}a.cor9 {
+    background: rgb(180,10,50);
+}a.cor10{
+    background:rgb(10,220,80);
+}
+.else-content{
+    height: 800px;
+}
+/* 详情页*/
+.title {
+    margin-bottom: 12px;
+    text-align: center;
+     font-size: x-large;
+}
+ .detial-img-title{
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+   
+ }
