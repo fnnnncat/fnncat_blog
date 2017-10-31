@@ -10,7 +10,7 @@
 <% }) %>   
   </div>
 </div>
-<video class="video" autoplay="autoplay" loop="loop" width="100%" >
+<video id="video" class="video" loop="loop" width="100%" >
   <source src="/video/sky.mp4" type="video/mp4" />
 Your browser does not support the video tag.
 </video>
@@ -25,6 +25,12 @@ Your browser does not support the video tag.
 <script>
   $(document).ready(function(){
 setTimeout(function(){
+  var myVid=document.getElementById("video");
+  myVid.addEventListener('loadedmetadata',function(){
+    alert("ssss");
+  });
+  
+  myVid.play();
   $(".loadding-container").hide();
   $(".autotype").animatext({
     speed: 150, 
