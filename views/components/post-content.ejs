@@ -1,24 +1,16 @@
 <div class="post-content">
-  <% if (post.icon=="icon-riqing"){%>
-      <i class="iconfont tag-sky-icon"> &#xe601;</i>
-   <% }else if(post.icon=="icon-yujiaxue"){ console.log("sssss")%>
-      <i class="iconfont tag-sky-icon"> &#xe608;</i>
-   <% }else if(post.icon=="icon-yanzhongmai"){%>
-       <i class="iconfont tag-sky-icon">&#xe62a;</i>
-   <% }else if(post.icon=="icon-teqiangnongwu"){%>
-   <i class="iconfont tag-sky-icon"> &#xe626;</i>
-   <% }else if(post.icon=="icon-zhenxue"){%>
-   <i class="iconfont tag-sky-icon">&#xe609;</i>
-   <% }else if(post.icon=="icon-yeqing"){%>
-   <i class="iconfont tag-sky-icon"> &#xe602;</i>
-   <% }%>
- 
-  <h3><a href="/posts/<%= post._id %>"><%= post.title %></a></h3>
-  <div class="ui grid">
-    <div class="eight wide column">
-      <div class="ui">
-        <pre><%- post.content %></pre>
-        <div>
+   <a href="/posts/<%= post._id %>">
+     <img src="/img/static.jpg">
+   </a>
+   <div class="cont">
+<h2>
+<em class="recommend">推荐</em>
+<a href="/posts/<%= post._id %>"><%= post.title %></a></h2>
+<div>
+<%- post.content %>
+</div>
+</div>
+<div class="post-content-footer">
           <span class="tag"><%= post.created_at %></span>
           <span class="post-tag">前端基础</span><span class="post-tag">生活杂谈</span>
           <span class="tag right">
@@ -37,8 +29,6 @@
             <% } %>
 
           </span>
-        </div>
-      </div>
-    </div>
   </div>
+
 </div>
