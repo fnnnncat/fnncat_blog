@@ -9,8 +9,8 @@ var checkLogin = require('../middlewares/check').checkLogin;
 //   eg: GET /posts?author=xxx
 router.get('/', function(req, res, next) {
   var author = req.query.author;
-
-  PostModel.getTenPosts(author,1)
+  var page =req.query.page;
+  PostModel.getTenPosts(author,page)
     .then(function (posts) {
       res.render('posts', {
         posts: posts
@@ -18,7 +18,20 @@ router.get('/', function(req, res, next) {
     })
     .catch(next);
 });
-// 根据页码展示文章
+
+//搜索内容展示
+router.get('/search',function(req,res,next){
+  var author = req.query.author;
+  var searchParam=req.query.searchParam;
+  PostModel.getPostsByParam(author,searchParam)
+    .then(function (posts) {
+      res.render('posts', {
+        posts: posts
+      });
+    })
+    .catch(next);
+
+}) 
 
 // GET /posts/create 发表文章页
 router.get('/create', checkLogin, function(req, res, next) {
@@ -32,6 +45,7 @@ router.post('/', checkLogin, function(req, res, next) {
   var title = req.fields.title;
   var content = req.fields.content;
   var icon = req.fields.icon;
+  var label = req.fields.label;
 
   // 校验参数
   try {
@@ -51,6 +65,7 @@ router.post('/', checkLogin, function(req, res, next) {
     title: title,
     content: content,
     icon:icon,
+    label:label,
     pv: 0
   };
  

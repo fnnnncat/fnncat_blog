@@ -91,6 +91,25 @@ module.exports = {
       .contentToHtml()
       .exec();
   },
+  // 模糊查询
+  getPostsByParam:function getPostsByParam(author,searchParam){
+    var query={};
+    if(author){
+      query.author=author;
+    }
+    if(searchParam){
+      query.searchParam=searchParam;
+    }
+    var pattern = new RegExp(searchParam, "i");
+    return Post
+      .find({"title": pattern})
+      .populate({ path: 'author', model: 'User' })
+      .sort({ _id: -1 })
+      .addCreatedAt()
+      .addCommentsCount()
+      .contentToHtml()
+      .exec();
+  },
   // 通过文章 id 给 pv 加 1
   incPv: function incPv(postId) {
     return Post
