@@ -2,12 +2,11 @@
   <div class="w1200 artmain">
 <div class="l-content">
   <div class="guide">
-    <a href="/">首页</a>&gt;<a href="/article">文章</a> &gt;<a href="/posts/<%= post._id %>"><%= post.title %></a>
+    <a href="/">首页</a>&gt;<a href="/post">文章</a> &gt;<a href="/posts/<%= post._id %>"><%= post.title %></a>
   </div>
   <div>
-    <h1 class="title"><%= post.title %></h3>
-        <img  class="detial-img-title" src="/img/static.jpg">
-        <pre><%- post.content %></pre>
+    <h3 class="title"><%= post.title %></h3>
+        <pre class="detial-content-wrap"><%- post.content %></pre>
         <div>
           <span class="tag"><%= post.created_at %></span>
           <span class="tag right">
