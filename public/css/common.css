@@ -21,8 +21,8 @@
         -moz-osx-font-smoothing: grayscale; 
         padding-left:20px
 }
-
-html,body{height: 100%;width: 100%;font-family: web-font;background: black}
+html,body{height: 100%;width: 100%;font-family: web-font;}
+html{background: url("../img/background.jpeg") no-repeat fixed top;background-size:cover;}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font:vertical-align: baseline; }
 
 
@@ -317,6 +317,16 @@ em.recommend {
 }
 .pagepagin-list{
     height: 60px;
+    padding-left: 40%;
+    padding-top: 20px;
+}
+.pagepagin-list div{
+    margin-top: 20px;
+}
+.pagepagin-list span{
+   padding: 4px;
+   border-radius: 2px;
+   border: 1px solid block;
 }
 .r-content{
     width: 410px;
@@ -336,18 +346,19 @@ em.recommend {
 }
 .r-content .search{
     padding: 17px 0;
+    margin-top: 40px;
 }
 .searchW {
     outline: none;
-    border: 1px solid rgb(88,88,88);
+    border: 1px solid rgb(88,88,88) !important;
     border-radius: 19px;
-    height: 27px;
+    height: 23px !important;
     text-indent: 15px;
     margin-left: 56px;
     position: relative;
     z-index: 3;
     color: rgb(33,29,39);
-    width: 172px;
+    width: 172px !important;
     float: left;
 }
 .searchB {
@@ -418,4 +429,46 @@ a.cor0 {
  .detial-content-wrap{
     padding:40px;
  }
+ /*编辑页*/
+ .edit-grid{
+    margin-top: 70px;
+    width: 80%;
+    margin: 0 auto
+ }
+ img.avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+ }
 
+.edit-intr-wrap label{
+   color: white;
+} 
+.edit-intr-wrap input{
+    width: 60%;
+    margin-left: 10%;
+}
+.edit-text-wrap label{
+    color: white;
+    float: left;
+
+}
+.edit-text-wrap {
+    height: 400px;
+ }
+.edit-text-wrap textarea{
+    width: 60%;
+    float: left;
+    margin-left: 10%;
+}
+.edit-grid .btn_wrap{
+    width: 80%;
+    margin: 0 auto;
+    height: 100px;
+}
+.edit-grid .submit{
+    width:80px;
+    height: 28px;
+    float: right;
+    margin-right: 23%;
+}

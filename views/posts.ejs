@@ -4,42 +4,45 @@
   <div class="w1200 artmain">
   
 
-<div class="l-content">
+<div class="l-content">x
   <div class="guide">
-    <a href="/">首页</a>&gt;<a href="/article">文章</a> 
+    <a href="/">首页</a>&gt;<a href="/posts">文章</a> 
   </div>
   <div class="layout-frame">
      <% posts.forEach(function (post) { %>
   <%- include('components/post-content', { post: post }) %>
 <% }) %>   
 </div>
- <!-- <div class="pagepagin-list">
-    <span><a href="page/1">1</a></span>
-    <span><a href="page/2">2</a></span>
-    <span><a href="page/3">3</a></span>
-    <span><a href="page/4">4</a></span>
-    <span><a href="page/5">5</a></span>
-  </div> -->
+ <div class="pagepagin-list">
+  <div>
+    <span><a href="/posts?page=1">首页</a></span>
+    <span><a href="/posts?page=1">1</a></span>
+    <span><a href="/posts?page=2">2</a></span>
+    <span><a href="/posts?page=2">末页</a></span>
+  </div>
+  </div>
 </div>
  <div class="r-content">
    <div class="search">
-     <input type="text" placeholder="文章搜索/回车键搜索" class="searchW">
-     <button class="searchB">搜索</button>
+      <form method="get" action="/posts/search">
+     <input id="searchParam" name="searchParam" type="text" placeholder="模糊搜索文章" class="searchW"  >
+     <input class="searchB" type="submit" value="搜索">
+     </form>
    </div>
    <div class="allTag">
     <h4>标签</h4>
     <div class="ovh">
     <a href="" class="cor0">nodejs</a>
-    <a href="" class="cor1">个人收藏</a>
-    <a href="" class="cor2">随笔</a>
-    <a href="" class="cor3">canvas</a>
-    <a href="" class="cor4">css3</a>
-    <a href="" class="cor5">javascript</a>
-    <a href="" class="cor6">threejs</a>
-    <a href="" class="cor7">html5</a>
-    <a href="" class="cor8">分享</a>
-    <a href="" class="cor9">电影</a>
-    <a href="" class="cor10">文学</a>
+    <a href="" class="cor1">工作积累</a>
+    <a href="" class="cor2">javascript</a>
+    <a href="" class="cor3">随笔</a>
+    <a href="" class="cor4">css</a>
+    <a href="" class="cor5">兼容性</a>
+    <a href="" class="cor6">网络</a>
+    <a href="" class="cor7">算法</a>
+    <a href="" class="cor8">碎碎念</a>
+    <a href="" class="cor9">工具</a>
+    <a href="" class="cor10">吧啦啦</a>
     </div>
   </div>
      <div class="else-content">
