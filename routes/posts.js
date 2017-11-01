@@ -10,7 +10,7 @@ var checkLogin = require('../middlewares/check').checkLogin;
 router.get('/', function(req, res, next) {
   var author = req.query.author;
 
-  PostModel.getPosts(author)
+  PostModel.getTenPosts(author,1)
     .then(function (posts) {
       res.render('posts', {
         posts: posts
@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
     })
     .catch(next);
 });
+// 根据页码展示文章
 
 // GET /posts/create 发表文章页
 router.get('/create', checkLogin, function(req, res, next) {

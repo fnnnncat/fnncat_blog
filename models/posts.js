@@ -1,4 +1,4 @@
-var marked = require('marked');
+var markdown = require('markdown').markdown;
 var Post = require('../lib/mongo').Post;
 var CommentModel = require('./comments');
 
@@ -27,13 +27,15 @@ Post.plugin('addCommentsCount', {
 Post.plugin('contentToHtml', {
   afterFind: function (posts) {
     return posts.map(function (post) {
-      post.content = marked(post.content);
+      post.preintro=post.content;
+      post.content = markdown.toHTML(post.content);
       return post;
     });
   },
   afterFindOne: function (post) {
     if (post) {
-      post.content = marked(post.content);
+      post.preintro=post.content;
+      post.content = markdown.toHTML(post.content);
     }
     return post;
   }
@@ -42,7 +44,6 @@ Post.plugin('contentToHtml', {
 module.exports = {
   // 创建一篇文章
   create: function create(post) {
-    console.log(post);
     return Post.create(post).exec();
   },
 
@@ -72,7 +73,24 @@ module.exports = {
       .contentToHtml()
       .exec();
   },
-
+  //每页查4条数据
+  getTenPosts:function getTenPosts(author,page){
+       var query = {};
+    if (author) {
+      query.author = author;
+    }
+    return Post
+      .find(query, {
+          skip: (page - 1)*10,
+          limit: 5
+        })
+      .populate({ path: 'author', model: 'User' })
+      .sort({ _id: -1 })
+      .addCreatedAt()
+      .addCommentsCount()
+      .contentToHtml()
+      .exec();
+  },
   // 通过文章 id 给 pv 加 1
   incPv: function incPv(postId) {
     return Post
