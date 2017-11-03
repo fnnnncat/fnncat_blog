@@ -13,12 +13,20 @@ router.get('/', function(req, res, next) {
   PostModel.getTenPosts(author,page)
     .then(function (posts) {
       res.render('posts', {
-        posts: posts
+        posts: posts,
       });
     })
     .catch(next);
 });
-
+router.get('/readmore', function(req, res, next) {
+  var author = req.query.author;
+  var page =req.query.page;
+  PostModel.getPostsByReadCount(author)
+    .then(function (post_readmore) {
+      res.send({post_readmore:post_readmore})
+    })
+    .catch(next);
+});
 //搜索内容展示
 router.get('/search',function(req,res,next){
   var author = req.query.author;

@@ -45,11 +45,25 @@
     <a href="/posts/search?searchParamType='吧啦啦'" class="cor10">吧啦啦</a>
     </div>
   </div>
+     <div class="readmore-content">
+        <h4 class="readmore-header">阅读排行</h4>
+        <div class="readmore-title"></div>
+     </div>
      <div class="else-content">
       
     </div>
 </div>
 </div>
 </div>
+<script type="text/javascript">
+  $.ajax({url:"/posts/readmore"}).
+  success(function(data){
+    console.log(data);
+    data.post_readmore.forEach(function(key,index){
+       $(".readmore-title").append("<p><a href='/posts/"+data.post_readmore[index]._id+"'><span class='titlem'>"+data.post_readmore[index].title+"</span><span>阅读量："+data.post_readmore[index].pv+"</span></a></p>");
+    })
+     
+  });
 
+</script>
 <%- include('footer') %>

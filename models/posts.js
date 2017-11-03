@@ -91,6 +91,22 @@ module.exports = {
       .contentToHtml()
       .exec();
   },
+  getPostsByReadCount:function getPostsByReadCount(author){
+    var query ={};
+    if(author){
+      query.author=author;
+    }
+    return Post
+    .find(query, {
+          limit: 10
+        })
+    .populate({ path: 'author', model: 'User' })
+    .sort({ pv: -1 })
+    .addCreatedAt()
+    .addCommentsCount()
+    .contentToHtml()
+    .exec();
+  },
   // 模糊查询
   getPostsByParam:function getPostsByParam(author,searchParam){
     var query={};

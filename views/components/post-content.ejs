@@ -12,7 +12,7 @@
 </div>
 <div class="post-content-footer">
           <span class="tag"><%= post.created_at %></span>
-          <span class="post-tag">工作积累</span><span class="post-tag">javascript</span>
+          <span class="post-tag"><%= post.label%></span><span class="post-tag"><%= post.icon%></span>
           <span class="tag right">
             <span>浏览(<%= post.pv %>)</span>
             <span>留言(<%= post.commentsCount %>)</span>
