@@ -417,6 +417,25 @@ a.cor0 {
 }a.cor10{
     background:rgb(10,220,80);
 }
+/*阅读排行榜*/
+.readmore-content{
+    padding: 6px;
+}
+.readmore-header{
+  text-align: center;   
+}
+.readmore-title p{
+  padding: 10px;
+  margin-left: 5px;
+}
+.readmore-title p .titlem{
+    display: inline-block;
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 20px;
+    white-space: nowrap;
+}
 .else-content{
     height: 800px;
 }
