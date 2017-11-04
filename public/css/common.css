@@ -438,7 +438,7 @@ a.cor0 {
     white-space: nowrap;
 }
 .else-content{
-    height: 580px;
+    height: 580px !important;
 }
 /* 详情页*/
 .title {
