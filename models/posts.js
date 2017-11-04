@@ -22,7 +22,6 @@ Post.plugin('addCommentsCount', {
     return post;
   }
 });
-
 // 将 post 的 content 从 markdown 转换成 html
 Post.plugin('contentToHtml', {
   afterFind: function (posts) {
@@ -81,15 +80,19 @@ module.exports = {
     }
     return Post
       .find(query, {
-          skip: (page - 1)*10,
+          skip: (page - 1)*5,
           limit: 5
         })
       .populate({ path: 'author', model: 'User' })
-      .sort({ _id: -1 })
+      .sort({ creat_time:-1,_id: -1 })
       .addCreatedAt()
       .addCommentsCount()
       .contentToHtml()
       .exec();
+  },
+  getPostsCount:function ggetPostsCount(author){
+    return Post.count().exec();
+      
   },
   getPostsByReadCount:function getPostsByReadCount(author){
     var query ={};

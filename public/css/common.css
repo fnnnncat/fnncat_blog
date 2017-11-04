@@ -317,7 +317,7 @@ em.recommend {
 }
 .pagepagin-list{
     height: 60px;
-    padding-left: 40%;
+    padding-left: 25%;
     padding-top: 20px;
 }
 .pagepagin-list div{
@@ -326,8 +326,9 @@ em.recommend {
 .pagepagin-list span{
    padding: 4px;
    border-radius: 2px;
-   border: 1px solid block;
+   border: solid 1px block;
 }
+
 .r-content{
     width: 410px;
     margin-right: 5px;
@@ -437,7 +438,7 @@ a.cor0 {
     white-space: nowrap;
 }
 .else-content{
-    height: 800px;
+    height: 580px;
 }
 /* 详情页*/
 .title {

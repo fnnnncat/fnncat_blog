@@ -15,10 +15,8 @@
 </div>
  <div class="pagepagin-list">
   <div>
-    <span><a href="/posts?page=1">首页</a></span>
-    <span><a href="/posts?page=1">1</a></span>
-    <span><a href="/posts?page=2">2</a></span>
-    <span><a href="/posts?page=2">末页</a></span>
+    <span class="top_Page"><a href="/posts?page=1">首页</a></span>
+    <span class="bot_page"></span>
   </div>
   </div>
 </div>
@@ -56,7 +54,7 @@
 </div>
 </div>
 <script type="text/javascript">
-  $.ajax({url:"/posts/readmore"}).
+ $.ajax({url:"/posts/readmore",async:false}).
   success(function(data){
     console.log(data);
     data.post_readmore.forEach(function(key,index){
@@ -64,6 +62,16 @@
     })
      
   });
+    $.ajax({url:"/posts/pagestotal"}).
+     success(function(data){
+       var pagesCo=Math.ceil(data.count/5);
+
+       for(var i=pagesCo;i>=1;i--){
+          $('.top_Page').after("<span><a href='/posts?page="+i+"'>"+i+"</a></span>"); 
+        }
+       $('.bot_page').append("<a href='/posts?page="+pagesCo+"'>末页</a>");
+     });
+  
 
 </script>
 <%- include('footer') %>

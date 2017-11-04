@@ -7,11 +7,12 @@
 <em class="recommend">推荐</em>
 <a href="/posts/<%= post._id %>"><%= post.title %></a></p>
 <div>
-<%- post.preintro %>
+<%- post.content %>
 </div>
 </div>
 <div class="post-content-footer">
-          <span class="tag"><%= post.created_at %></span>
+
+          <span class="tag"><%= post.creat_time?post.creat_time:post.created_at %></span>
           <span class="post-tag"><%= post.label%></span><span class="post-tag"><%= post.icon%></span>
           <span class="tag right">
             <span>浏览(<%= post.pv %>)</span>
@@ -29,6 +30,7 @@
             <% } %>
 
           </span>
+
   </div>
 
 </div>
