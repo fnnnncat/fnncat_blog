@@ -18,12 +18,20 @@ router.get('/', function(req, res, next) {
     })
     .catch(next);
 });
+
 router.get('/readmore', function(req, res, next) {
   var author = req.query.author;
-  var page =req.query.page;
   PostModel.getPostsByReadCount(author)
     .then(function (post_readmore) {
       res.send({post_readmore:post_readmore})
+    })
+    .catch(next);
+});
+router.get('/pagestotal', function(req, res, next) {
+
+  PostModel.getPostsCount()
+    .then(function (count) {
+      res.send({count})
     })
     .catch(next);
 });
@@ -50,6 +58,7 @@ router.get('/create', checkLogin, function(req, res, next) {
 router.post('/', checkLogin, function(req, res, next) {
   console.log(req.fields)
   var author = req.session.user._id;
+  console.log(author);
   var title = req.fields.title;
   var content = req.fields.content;
   var icon = req.fields.icon;
@@ -74,7 +83,8 @@ router.post('/', checkLogin, function(req, res, next) {
     content: content,
     icon:icon,
     label:label,
-    pv: 0
+    pv: 0,
+    creat_time:new Date().Format("yyyy-MM-dd hh:mm:ss")
   };
  
 
@@ -139,10 +149,10 @@ router.get('/:postId/edit', checkLogin, function(req, res, next) {
 router.post('/:postId/edit', checkLogin, function(req, res, next) {
   var postId = req.params.postId;
   var author = req.session.user._id;
+  console.log(author)
   var title = req.fields.title;
   var content = req.fields.content;
   var icon =req.fields.icon;
-
   PostModel.updatePostById(postId, author, { title: title, content: content,icon:icon })
     .then(function () {
       req.flash('success', '编辑文章成功');
@@ -199,5 +209,19 @@ router.get('/:postId/comment/:commentId/remove', checkLogin, function(req, res, 
     })
     .catch(next);
 });
-
+Date.prototype.Format = function (fmt) { //author: meizz 
+var o = {
+    "M+": this.getMonth() + 1, //月份 
+    "d+": this.getDate(), //日 
+    "h+": this.getHours(), //小时 
+    "m+": this.getMinutes(), //分 
+    "s+": this.getSeconds(), //秒 
+    "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+    "S": this.getMilliseconds() //毫秒 
+};
+if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+for (var k in o)
+if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+return fmt;
+}
 module.exports = router;
