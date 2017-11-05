@@ -116,9 +116,6 @@ module.exports = {
     if(author){
       query.author=author;
     }
-    if(searchParam="all"){
-      searchParam="";
-    }
     var pattern = new RegExp(searchParam, "i");
     return Post
       .find({"title": pattern})
