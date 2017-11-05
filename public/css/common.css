@@ -248,6 +248,11 @@ header nav .nav-item{
     font-size: 15px;
     font-weight: bold;
 }
+.l-content .guide .hot{
+    color: #de4c4c;
+    margin: 0 10px;
+    font-size: x-large;
+}
 .l-content .post-content a>img{
     float: left;
     width: 23%;
@@ -290,23 +295,27 @@ em.recommend {
     transition: all 0.1s;
 }
 .cont>div {
-    height: 88px;
+    height: 76px;
     margin-right: 20px;
     margin-bottom: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-indent: 2em;
+    margin-top: 8px;
 }
 .cont>div >p {
     color: rgba(55,55,55,.8);
     font-size: 15px;
-
+    line-height: 24px;
 }
 .post-content-footer{
     margin-top: 110px;
     padding-left: 270px;
     padding-right: 30px;
 }
-
+.post-content-footer .right{
+    float: right;
+}
 .post-tag{
 	font-size: 12px;
     margin-right: 10px;
@@ -327,6 +336,10 @@ em.recommend {
    padding: 4px;
    border-radius: 2px;
    border: solid 1px block;
+}
+.agepagin-list a :active{
+    color: red;
+    font-size: x-large;
 }
 
 .r-content{
@@ -447,7 +460,19 @@ a.cor0 {
      font-size: x-large;
 }
  .detial-content-wrap{
-    padding:40px;
+    width: 90%;
+    padding: 20px;
+    margin: 0 auto;
+    white-space: pre-wrap;
+    background-color: white;
+ }
+ .detial-content-wrap img{
+    width: 100%;
+ }
+
+ .detail-content-footer{
+    text-align: right;
+    padding-right: 20px;
  }
  /*编辑页*/
  .edit-grid{

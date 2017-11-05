@@ -10,13 +10,22 @@ var checkLogin = require('../middlewares/check').checkLogin;
 router.get('/', function(req, res, next) {
   var author = req.query.author;
   var page =req.query.page;
-  PostModel.getTenPosts(author,page)
-    .then(function (posts) {
-      res.render('posts', {
-        posts: posts,
-      });
-    })
-    .catch(next);
+
+  Promise.all([
+    PostModel.getTenPosts(author,page),
+    PostModel.getPostsCount()
+  ])
+  .then(function (result) {
+    var posts = result[0];
+    var count = result[1];
+
+    res.render('posts', {
+      posts: posts,
+      searchParam:"",
+      count: Math.ceil(count/5)
+    });
+  })
+  .catch(next);
 });
 
 router.get('/readmore', function(req, res, next) {
@@ -39,11 +48,22 @@ router.get('/pagestotal', function(req, res, next) {
 router.get('/search',function(req,res,next){
   var author = req.query.author;
   var searchParam=req.query.searchParam;
-  PostModel.getPostsByParam(author,searchParam)
-    .then(function (posts) {
-      res.render('posts', {
-        posts: posts
-      });
+  var page=req.query.page;
+  Promise.all(
+    [ PostModel.getPostsByParam(author,searchParam,page),
+      PostModel.getPostsCountByParm(searchParam)
+    ])
+    .then(function (result) {
+     var posts = result[0];
+     var count = result[1];
+     if(searchParam="all"){
+      searchParam="";
+     }
+     res.render('posts', {
+      posts: posts,
+      searchParam:searchParam,
+      count: Math.ceil(count/5)
+    });
     })
     .catch(next);
 
