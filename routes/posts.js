@@ -56,9 +56,6 @@ router.get('/search',function(req,res,next){
     .then(function (result) {
      var posts = result[0];
      var count = result[1];
-     if(searchParam="all"){
-      searchParam="";
-     }
      res.render('posts', {
       posts: posts,
       searchParam:searchParam,
