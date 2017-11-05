@@ -4,9 +4,12 @@
   <div class="w1200 artmain">
   
 
-<div class="l-content">x
+<div class="l-content">
   <div class="guide">
-    <a href="/">首页</a>&gt;<a href="/posts">文章</a> 
+    <a href="/">首页</a>&gt;<a href="/posts">文章</a>
+ <% if (searchParam!="all"&&searchParam!="") { %>
+ <span>您搜索有关 <span class="hot"><%=searchParam%></span>如下<span>
+   <% } %>
   </div>
   <div class="layout-frame">
      <% posts.forEach(function (post) { %>
@@ -40,7 +43,7 @@
     <a href="/posts/search?searchParamType='算法'" class="cor7">算法</a>
     <a href="/posts/search?searchParamType='碎碎念'" class="cor8">碎碎念</a>
     <a href="/posts/search?searchParamType='工具'" class="cor9">工具</a>
-    <a href="/posts/search?searchParamType='吧啦啦'" class="cor10">吧啦啦</a>
+    <a href="/posts/search?searchParamType='老站内容'" class="cor10">老站内容</a>
     </div>
   </div>
      <div class="readmore-content">
@@ -54,23 +57,31 @@
 </div>
 </div>
 <script type="text/javascript">
+$(document).ready(function(){
+ //分页
+ var page_count="#page_id"+GetQueryString("page")
+ for(var i=<%-count%>;i>=1;i--){
+          $('.top_Page').after("<span><a id='page_id"+i+"' href='/posts/search?page="+i+"&&searchParam=<%-searchParam%>'>"+i+"</a></span>"); 
+        }
+ $('.bot_page').append("<a href='/posts/search?page="+<%-count%>+"&&searchParam=<%-searchParam%>'>末页</a>");
+ $(page_count).css({"color":"red","font-size":"x-large"})
+ //右侧排行榜
  $.ajax({url:"/posts/readmore",async:false}).
   success(function(data){
     console.log(data);
     data.post_readmore.forEach(function(key,index){
-       $(".readmore-title").append("<p><a href='/posts/"+data.post_readmore[index]._id+"'><span class='titlem'>"+data.post_readmore[index].title+"</span><span>阅读量："+data.post_readmore[index].pv+"</span></a></p>");
+       $(".readmore-title").append("<p><a href='/posts/search?"+data.post_readmore[index]._id+"'><span class='titlem'>"+data.post_readmore[index].title+"</span><span>阅读量："+data.post_readmore[index].pv+"</span></a></p>");
     })
      
   });
-    $.ajax({url:"/posts/pagestotal"}).
-     success(function(data){
-       var pagesCo=Math.ceil(data.count/5);
+  function GetQueryString(name)
+  {
+     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+     var r = window.location.search.substr(1).match(reg);
+     if(r!=null)return  unescape(r[2]); return null;
+   }
+})
 
-       for(var i=pagesCo;i>=1;i--){
-          $('.top_Page').after("<span><a href='/posts?page="+i+"'>"+i+"</a></span>"); 
-        }
-       $('.bot_page').append("<a href='/posts?page="+pagesCo+"'>末页</a>");
-     });
   
 
 </script>
