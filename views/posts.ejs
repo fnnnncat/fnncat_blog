@@ -70,7 +70,7 @@ $(document).ready(function(){
   success(function(data){
     console.log(data);
     data.post_readmore.forEach(function(key,index){
-       $(".readmore-title").append("<p><a href='/posts/search?"+data.post_readmore[index]._id+"'><span class='titlem'>"+data.post_readmore[index].title+"</span><span>阅读量："+data.post_readmore[index].pv+"</span></a></p>");
+       $(".readmore-title").append("<p><a href='/posts/"+data.post_readmore[index]._id+"'><span class='titlem'>"+data.post_readmore[index].title+"</span><span>阅读量："+data.post_readmore[index].pv+"</span></a></p>");
     })
      
   });
