@@ -122,7 +122,7 @@ module.exports = {
       .skip((page-1)*5)
       .limit(5)
       .populate({ path: 'author', model: 'User' })
-      .sort({ _id: -1 })
+      .sort({ creat_time:-1,_id: -1 })
       .addCreatedAt()
       .addCommentsCount()
       .contentToHtml()
