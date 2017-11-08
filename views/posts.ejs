@@ -6,7 +6,7 @@
 
 <div class="l-content">
   <div class="guide">
-    <a href="/">首页</a>&gt;<a href="/posts">文章</a>
+    <a href="/">Fnncat</a>&gt;<a href="/posts">文章</a>
  <% if (searchParam!="all"&&searchParam!="") { %>
  <span>您搜索有关 <span class="hot"><%=searchParam%></span>如下<span>
    <% } %>
@@ -26,7 +26,7 @@
  <div class="r-content">
    <div class="search">
       <form method="get" action="/posts/search">
-     <input id="searchParam" name="searchParam" type="text" placeholder="模糊搜索文章" class="searchW"  >
+     <input id="searchParam" name="searchParam" type="text" placeholder="模糊搜索标题" class="searchW"  >
      <input class="searchB" type="submit" value="..  ..">
      <div class="search_cat">
        <div class="mao_box">
@@ -95,7 +95,8 @@
         <div class="readmore-title"></div>
      </div>
      <div class="else-content">
-      
+        <h4 class="readmore-header">聊天室</h4>
+
     </div>
 </div>
 </div>
@@ -118,6 +119,9 @@ $(document).ready(function(){
     })
      
   });
+  $(".search_cat").on("click",function(){
+    $(".searchB").click();
+  })
   function GetQueryString(name)
   {
      var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
