@@ -80,6 +80,7 @@ router.post('/', checkLogin, function(req, res, next) {
   var content = req.fields.content;
   var icon = req.fields.icon;
   var label = req.fields.label;
+  var param_type=req.fields.param_type;
 
   // 校验参数
   try {
@@ -101,7 +102,8 @@ router.post('/', checkLogin, function(req, res, next) {
     icon:icon,
     label:label,
     pv: 0,
-    creat_time:new Date().Format("yyyy-MM-dd hh:mm:ss")
+    creat_time:new Date().Format("yyyy-MM-dd hh:mm:ss"),
+    param_type:param_type
   };
  
 
@@ -166,11 +168,14 @@ router.get('/:postId/edit', checkLogin, function(req, res, next) {
 router.post('/:postId/edit', checkLogin, function(req, res, next) {
   var postId = req.params.postId;
   var author = req.session.user._id;
-  console.log(author)
+  console.log(author);
   var title = req.fields.title;
   var content = req.fields.content;
-  var icon =req.fields.icon;
-  PostModel.updatePostById(postId, author, { title: title, content: content,icon:icon })
+  var icon = req.fields.icon;
+  var label = req.fields.label;
+  var param_type=req.fields.param_type;
+
+  PostModel.updatePostById(postId, author, { title: title, content: content,icon:icon,label:label,param_type:param_type})
     .then(function () {
       req.flash('success', '编辑文章成功');
       // 编辑成功后跳转到上一页

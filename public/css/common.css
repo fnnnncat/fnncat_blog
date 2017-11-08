@@ -256,6 +256,7 @@ header nav .nav-item{
 .l-content .post-content a>img{
     float: left;
     width: 23%;
+    height: 134px;
     padding-left: 25px;
 }
 .r-content{
