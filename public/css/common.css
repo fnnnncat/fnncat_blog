@@ -3,15 +3,17 @@
 	font-family: web-font;
 	src:url('./font/Windsor Regular.fcd3c02.woff');
 }
+
+/*cat font icon*/
 @font-face {
-  font-family: 'iconfont';  /* project id 456840 */
-  src: url('//at.alicdn.com/t/font_456840_swez4k6zt2h2gldi.eot');
-  src: url('//at.alicdn.com/t/font_456840_swez4k6zt2h2gldi.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_456840_swez4k6zt2h2gldi.woff') format('woff'),
-  url('//at.alicdn.com/t/font_456840_swez4k6zt2h2gldi.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_456840_swez4k6zt2h2gldi.svg#iconfont') format('svg');
+  font-family: 'iconfont';  /* project id 469120 */
+  src: url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.eot');
+  src: url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.svg#iconfont') format('svg');
 }
-@import url('//at.alicdn.com/t/font_456840_swez4k6zt2h2gldi.css');
+@import url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.css');
 .iconfont{
 	font-family:"iconfont";
 	font-size:16px;
@@ -47,7 +49,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 body { font-size: 14px;  color: #374050; }
 
-a { text-decoration: none; color: #374050; }
+a { text-decoration: none; }
 
 iframe { display:block; border: none; }
 
@@ -234,27 +236,32 @@ header nav .nav-item{
 }
 .l-content > div{
     overflow: hidden;
-    background: rgba(255,255,255,.8);
+    /* background: rgba(255,255,255,.8); */
     padding-top: 21px;
     padding-bottom: 21px;
     border-radius: 10px;
     margin: 21px 0;
     margin-left: 7px;
     transition: all 0.28s;
+    
+}
+.l-content .guide{
+    border: 2px solid wheat;
 }
 .l-content .guide a {
     padding: 0 11px;
-    color: rgb(55,55,55);
+    color: #f1feff;
     font-size: 18px;
     font-weight: bold;
     font-family: web-font;
+
 }
 .l-content .guide a:nth-child(1){
    font-size: 25px;
-   color: rgb(180,0,0)
+   color: #f1feff;
 }
 .l-content .guide .hot{
-    color: #de4c4c;
+    color: #f1feff;
     margin: 0 10px;
     font-size: x-large;
 }
@@ -273,7 +280,7 @@ header nav .nav-item{
 
 .post-content{
 	overflow: hidden;
-    background: rgba(255,255,255,.8);
+    background: #f1feff;
     padding-top: 21px;
     padding-bottom: 21px;
     border-radius: 10px;
@@ -330,6 +337,7 @@ em.recommend {
     color: #999;
 }
 .pagepagin-list{
+    color: #f1feff;
     height: 60px;
     padding-left: 25%;
     padding-top: 20px;
@@ -341,6 +349,9 @@ em.recommend {
    padding: 4px;
    border-radius: 2px;
    border: solid 1px block;
+}
+.pagepagin-list a{
+     color: #f1feff;
 }
 .agepagin-list a :active{
     color: red;
@@ -355,13 +366,14 @@ em.recommend {
 }
 .r-content > div{
     overflow: hidden;
-    background: rgba(255,255,255,.8);
+    /* background: rgba(255,255,255,.8); */
     padding-top: 21px;
     padding-bottom: 21px;
     border-radius: 10px;
     margin: 21px 0;
     margin-left: 7px;
     transition: all 0.28s;
+    border: 2px solid wheat;
 }
 .r-content .search{
     margin-top: 20px;
@@ -468,19 +480,41 @@ a.cor0 {
     padding: 6px;
 }
 .readmore-header{
-  text-align: center;   
+    color: #f1feff;
+  text-align: center;
+  font-size: 20px;   
 }
 .readmore-title p{
-  padding: 10px;
-  margin-left: 5px;
+    padding-top: 10px;
+    margin-left: 5px;
+     font-size: 16px;
+     color: #f1feff;
 }
 .readmore-title p .titlem{
     display: inline-block;
-    width: 60%;
+    width: 50%;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-right: 20px;
     white-space: nowrap;
+    color: #f1feff;
+
+}
+.readmore-title p .titlem + span{
+   color: #f1feff;
+}
+.readmore-content .readmore_icon{
+    margin-right: 12px;
+    font-size: 26px;
+    color: #f1feff;
+    position: relative;
+    bottom: 2px;
+}
+.readmore-content .readmore_index{
+     color:#f1feff;
+    position: relative;
+    bottom: 8px;
+    left: -30px;
 }
 .else-content{
     height: 410px;
