@@ -6,7 +6,7 @@
 
 <div class="l-content">
   <div class="guide">
-    <a href="/">Fnncat</a>&gt;<a href="/posts">文章</a>
+    <a href="/">Fnncat</a><a href="/posts">&gt;    文章</a>
  <% if (searchParam!="all"&&searchParam!="") { %>
  <span>您搜索有关 <span class="hot"><%=searchParam%></span>如下<span>
    <% } %>
@@ -24,7 +24,7 @@
   </div>
 </div>
  <div class="r-content">
-     <%- include('components/fnncat_1.ejs') %>
+
    <div class="search">
       <form method="get" action="/posts/search">
      <input id="searchParam" name="searchParam" type="text" placeholder="模糊搜索标题" class="searchW"  >
@@ -96,9 +96,12 @@
         <h4 class="readmore-header">阅读排行</h4>
         <div class="readmore-title"></div>
      </div>
+      <%- include('components/fnncat_1.ejs') %>
+</div>
+
 </div>
 </div>
-</div>
+
 <script type="text/javascript">
 $(document).ready(function(){
  //分页
@@ -113,7 +116,7 @@ $(document).ready(function(){
   success(function(data){
     console.log(data);
     data.post_readmore.forEach(function(key,index){
-       $(".readmore-title").append("<p><a href='/posts/"+data.post_readmore[index]._id+"'><span class='titlem'>"+data.post_readmore[index].title+"</span><span>阅读量："+data.post_readmore[index].pv+"</span></a></p>");
+       $(".readmore-title").append("<p><a href='/posts/"+data.post_readmore[index]._id+"'><i class='iconfont readmore_icon'>&#xe622;</i><i class='readmore_index'>"+(index+1)+"</i><span class='titlem'>"+data.post_readmore[index].title+"</span><span>阅读量："+data.post_readmore[index].pv+"</span></a></p>");
     })
      
   });

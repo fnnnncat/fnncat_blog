@@ -101,7 +101,7 @@ module.exports = {
     }
     return Post
     .find(query, {
-          limit: 10
+          limit: 5
         })
     .populate({ path: 'author', model: 'User' })
     .sort({ pv: -1 })
