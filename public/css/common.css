@@ -373,7 +373,7 @@ em.recommend {
     margin: 21px 0;
     margin-left: 7px;
     transition: all 0.28s;
-    border: 2px solid wheat;
+    border: 2px solid wheat;;
 }
 .r-content .search{
     margin-top: 20px;
