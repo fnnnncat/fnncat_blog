@@ -198,7 +198,7 @@ body .fn-hide {display:none;}
 .line-height-20{ line-height: 20px;}
 .line-height-30{ line-height: 30px;}
 /*公用布局样式*/
-.layout-frame,.layout-framex { margin-bottom: 20px; background: transparent;height: 100%;margin: 0 auto ;z-index: 3;background: black}
+.layout-frame,.layout-framex { margin-bottom: 20px; background: transparent;height: 100%;margin: 0 auto ;z-index: 3;background: black;min-height: 1000px}
 .layout-frame { width: 100%; }
 .center-content{width: 50%;margin: 0 auto; margin-bottom: 80px;}
 .layout-framex { width: 49%; }
@@ -240,13 +240,12 @@ header nav .nav-item{
     padding-top: 21px;
     padding-bottom: 21px;
     border-radius: 10px;
-    margin: 21px 0;
     margin-left: 7px;
     transition: all 0.28s;
-    
 }
 .l-content .guide{
-    border: 2px solid wheat;
+    border: 2px solid #f1feff;
+    margin-top: 20px;
 }
 .l-content .guide a {
     padding: 0 11px;
@@ -337,13 +336,35 @@ em.recommend {
     color: #999;
 }
 .pagepagin-list{
+    position: relative;
     color: #f1feff;
     height: 60px;
-    padding-left: 25%;
     padding-top: 20px;
+    width: 1200px;
+    height: 300px;
+    margin-top:20px;
 }
 .pagepagin-list div{
-    margin-top: 20px;
+    margin-top: 60px;
+    position: relative;
+    height: 300px;
+}
+.pagepagin-list .top_Page{
+    position: relative;
+    top: 26px;
+}
+.pagepagin-list .top_Page >a >span{
+    z-index: 4;
+    position: relative;
+    font-size: 10px;
+    bottom: 20px;
+      left: 60px
+}
+.pagepagin-list .top_Page .page_icon{
+    font-size: 44px;
+}
+.pagepagin-list .top_Page .page_icon{
+    font-size: 44px;
 }
 .pagepagin-list span{
    padding: 4px;
@@ -351,13 +372,80 @@ em.recommend {
    border: solid 1px block;
 }
 .pagepagin-list a{
-     color: #f1feff;
+     color: #b2c8ca;
 }
-.agepagin-list a :active{
-    color: red;
-    font-size: x-large;
+.pagepagin-list a :hover{
+    color: #70bcc3 !important;
 }
-
+span.page_span_2 {
+    bottom: 42px;
+    left: 7px;
+    position: relative;
+}
+span.page_span_3 {
+    top:6px;
+    left: 7px;
+    position: relative;
+}span.page_span_4 {
+    bottom: 42px;
+    left: 7px;
+    position: relative;
+}span.page_span_5 {
+    top:-26px;
+    left: 7px;
+    position: relative;
+}span.page_span_6 {
+    bottom: 17px;
+    left: 7px;
+    position: relative;
+}span.page_span_7 {
+    top:16px;
+    left: 7px;
+    position: relative;
+}span.page_span_8 {
+    bottom: 32px;
+    left: 7px;
+    position: relative;
+}span.page_span_9 {
+    top:16px;
+    left: 7px;
+    position: relative;
+}span.page_span_10 {
+    bottom: 42px;
+    left: 7px;
+    position: relative;
+}span.page_span_11 {
+ top:21px;
+    left: 7px;
+    position: relative;
+}span.page_span_12 {
+    bottom: 35px;
+    left: 7px;
+    position: relative;
+}span.page_span_13 {
+    top:8px;
+    left: 7px;
+    position: relative;
+}span.page_span_14 {
+    bottom: 22px;
+    left: 7px;
+    position: relative;
+}span.page_span_15 {
+    top:6px;
+    left: 18px;
+    position: relative;
+}
+span.bot_page .page_icon{
+    position: relative;
+    font-size: 32px !important;
+    left: 32px !important;
+}
+i.iconfont.page_icon {
+    font-size: 23px;
+    position: relative;
+    left: -32px;
+    bottom: 20px
+}
 .r-content{
     width: 410px;
     margin-right: 5px;
@@ -373,7 +461,7 @@ em.recommend {
     margin: 21px 0;
     margin-left: 7px;
     transition: all 0.28s;
-    border: 2px solid wheat;;
+    border: 2px solid #f1feff;
 }
 .r-content .search{
     margin-top: 20px;
