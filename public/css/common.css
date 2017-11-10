@@ -348,6 +348,7 @@ em.recommend {
     margin-top: 60px;
     position: relative;
     height: 300px;
+    padding-left: 3%;
 }
 .pagepagin-list .top_Page{
     position: relative;
