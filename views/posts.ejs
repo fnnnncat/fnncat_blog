@@ -18,7 +18,7 @@
 </div>
  <div class="pagepagin-list">
   <div>
-    <span class="top_Page"><a href="/posts?page=1"><span>start</span><i class='iconfont page_icon'>&#xe612;</i></a></span>
+    <span class="top_Page page_span_1 pagination"><a id="page_id1" href="/posts?page=1"><span>start</span><i class='iconfont page_icon'>&#xe612;</i></a></span>
     <span class="bot_page"></span>
   </div>
   </div>
@@ -104,13 +104,23 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+ 
  //分页
- var page_count="#page_id"+GetQueryString("page")
- for(var i=<%-count-1%>;i>=2;i--){
-          $('.top_Page').after("<span class='page_span_"+i+"'><a id='page_id"+i+"' href='/posts/search?page="+i+"&&searchParam=<%-searchParam%>'>"+i+"<i class='iconfont page_icon'>&#xe63a;</i></a></span>"); 
-        }
+
+ var p_co=parseInt(GetQueryString("page")?GetQueryString("page"):1);// 当前页数
+ var p_t=<%-count%>//总的页数
+ var co=10;//分页展示数
+ var realco=(co<p_t)?co:p_t;//如果小于展示数 
+ var count_s=(realco<10)?2:((p_co<5)?2:((p_co>p_t-5)?p_t-9:p_co-3));
+ var count_e=(realco<10)?realco:((p_co<5)?co:((p_co>p_t-5)?p_t-1:p_co+5));
+ for (var i = count_e; i >=count_s; i--) {
+    $('.top_Page').after("<span class='page_span_"+i+" pagination'><a id='page_id"+i+"' href='/posts/search?page="+i+"&&searchParam=<%-searchParam%>'>"+i+"<i class='iconfont page_icon'>&#xe63a;</i></a></span>");
+    }
  $('.bot_page').append("<a href='/posts/search?page="+<%-count%>+"&&searchParam=<%-searchParam%>'><i class='iconfont page_icon'>&#xe605;</i>end</a>");
- $(page_count).css({"color":"red"})
+
+ $("#page_id"+p_co).find(".iconfont").html("&#xe612;").css({"font-size":"42px","color":"white","left":"-50px"});
+ $(".top_Page").find(".iconfont").html("&#xe63a;").css("font-size","23px");
+  $("#page_id"+p_co).css("color","white");
  //右侧排行榜
  $.ajax({url:"/posts/readmore",async:false}).
   success(function(data){

@@ -353,19 +353,6 @@ em.recommend {
     position: relative;
     top: 26px;
 }
-.pagepagin-list .top_Page >a >span{
-    z-index: 4;
-    position: relative;
-    font-size: 10px;
-    bottom: 20px;
-      left: 60px
-}
-.pagepagin-list .top_Page .page_icon{
-    font-size: 44px;
-}
-.pagepagin-list .top_Page .page_icon{
-    font-size: 44px;
-}
 .pagepagin-list span{
    padding: 4px;
    border-radius: 2px;
@@ -439,6 +426,9 @@ span.bot_page .page_icon{
     position: relative;
     font-size: 32px !important;
     left: 32px !important;
+}
+span.bot_page {
+    margin-left: -28px;
 }
 i.iconfont.page_icon {
     font-size: 23px;
