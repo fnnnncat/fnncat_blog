@@ -206,24 +206,47 @@ body .fn-hide {display:none;}
 header {
     z-index: 999;
     width: 100%;
-    background: rgba(0,0,0,.3);
+    background: white;
     position: fixed;
     top: 0;
     left: 0;
+    height: 60px;
+}
+header .nav{
+    padding-top: 20px;
+}
+header .target{
+    float: left;
+    margin-left: 20px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+header .target i{
+    font-size: 28px;
+    font-weight: bolder;
+    margin-top: -10px;
+
+}
+header .target span{
+    font-family: web-font;
+    margin-left: 10px;
+    font-size: 20px;
 }
 
-header nav{
-    width: 1200px;
-    margin: 0 auto;
-    padding: 17px 0;
-    position: relative;
-    text-align: center;
+header .guide{
+    width: 400px;
+    float: left;
+    margin-left: 120px;
+    font-family: web-font;
+    font-size: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
 }
-header nav .nav-item{
-    color: white;
-    margin: 0 8px;
-    padding: 11px;
-    font-size: 15px;
+header form{
+    float: right;
+    width: 300px;
 }
 .artmain{
     margin-top: 57px;
@@ -441,7 +464,7 @@ i.iconfont.page_icon {
     width: 410px;
     margin-right: 5px;
     float: right;
-    margin-top: 8px;
+    margin-top: 28px;
 }
 .r-content > div{
     overflow: hidden;

@@ -1,9 +1,16 @@
+  <header>
+   <div class="nav">
+      <a class="target"><i class="iconfont">&#xe632;</i><span>menu</span></a>
+
+  <div class="guide">
+    <a href="/">首页</a>&gt;<a href="/posts/<%= post._id %>"><%= post.title %></a>
+  </div>
+     </div>
+  </header>
 <div class="fiexddiv">
   <div class="w1200 artmain">
 <div class="l-content all-width">
-  <div class="guide">
-    <a href="/">首页</a>&gt;<a href="/posts">文章</a> &gt;<a href="/posts/<%= post._id %>"><%= post.title %></a>
-  </div>
+
   <div>
     <h3 class="title"><%= post.title %></h3>
         <div class="detial-content-wrap"><%- post.content %></div>
