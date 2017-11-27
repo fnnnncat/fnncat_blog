@@ -1,32 +1,15 @@
 
 <%- include('header') %>
-<div class="fiexddiv">
-  <div class="w1200 artmain">
-  
-
-<div class="l-content">
-  <div class="guide">
-    <a href="/">Fnncat</a><a href="/posts">&gt;    文章</a>
- <% if (searchParam!="all"&&searchParam!="") { %>
- <span>您搜索有关 <span class="hot"><%=searchParam%></span>如下<span>
+  <header>
+   <div class="nav">
+      <a class="target"><i class="iconfont">&#xe632;</i><span>menu</span></a>
+    <div class="guide">
+    <a href="/posts">fnncat 首页</a>
+      <% if (searchParam!="all"&&searchParam!="") { %>
+      <span>您搜索有关 <span class="hot"><%=searchParam%></span>如下</span>
    <% } %>
-  </div>
-  <div class="layout-frame">
-     <% posts.forEach(function (post) { %>
-  <%- include('components/post-content', { post: post }) %>
-<% }) %>   
-</div>
- <div class="pagepagin-list">
-  <div>
-    <span class="top_Page page_span_1 pagination"><a id="page_id1" href="/posts?page=1"><span>start</span><i class='iconfont page_icon'>&#xe612;</i></a></span>
-    <span class="bot_page"></span>
-  </div>
-  </div>
-</div>
- <div class="r-content">
-
-   <div class="search">
-      <form method="get" action="/posts/search">
+ </div>
+    <form method="get" action="/posts/search">
      <input id="searchParam" name="searchParam" type="text" placeholder="模糊搜索标题" class="searchW"  >
      <input class="searchB" type="submit" value="..  ..">
      <div class="search_cat">
@@ -74,8 +57,32 @@
 </div>
      </div>
      </form>
-   </div>
-   <div class="allTag">
+  </div>
+
+  </header>
+<div class="fiexddiv">
+  <div class="w1200 artmain">
+  
+
+<div class="l-content">
+
+  <div class="layout-frame">
+     <% posts.forEach(function (post) { %>
+  <%- include('components/post-content', { post: post }) %>
+<% }) %>   
+</div>
+ <div class="pagepagin-list">
+  <div>
+    <span class="top_Page page_span_1 pagination"><a id="page_id1" href="/posts?page=1"><span>start</span><i class='iconfont page_icon'>&#xe612;</i></a></span>
+    <span class="bot_page"></span>
+  </div>
+  </div>
+</div>
+ <div class="r-content">
+  <div>
+    <h4>公告</h4>
+  </div>
+<!--    <div class="allTag">
     <h4>标签</h4>
     <div class="ovh">
     <a href="/posts/search?searchParamType='nodejs'" class="cor0">nodejs</a>
@@ -91,7 +98,7 @@
     <a href="/posts/search?searchParamType='老站内容'" class="cor10">老站内容</a>
     </div>
   </div>
-
+ -->
      <div class="readmore-content">
         <h4 class="readmore-header">阅读排行</h4>
         <div class="readmore-title"></div>
