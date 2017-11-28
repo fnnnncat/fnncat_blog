@@ -2,69 +2,23 @@
 <%- include('header') %>
   <header>
    <div class="nav">
-      <a class="target"><i class="iconfont">&#xe632;</i><span>menu</span></a>
+      <a id="menu_btn" class="target"><i class="iconfont">&#xe632;</i><span>menu</span></a>
     <div class="guide">
     <a href="/posts">fnncat 首页</a>
       <% if (searchParam!="all"&&searchParam!="") { %>
       <span>您搜索有关 <span class="hot"><%=searchParam%></span>如下</span>
    <% } %>
  </div>
-    <form method="get" action="/posts/search">
-     <input id="searchParam" name="searchParam" type="text" placeholder="模糊搜索标题" class="searchW"  >
-     <input class="searchB" type="submit" value="..  ..">
-     <div class="search_cat">
-       <div class="mao_box">
-  <div class="mao">
-    <div class="erduo">
-      <div></div>
-      <div></div>
-    </div>
-    <div class="yanjing">
-      <div>
-        <div class="yanquan">
-          <div></div>
-        </div>
-        <div class="yanquan_hedding">
-
-        </div>
-        <div class="hong"></div>
-      </div>
-      <div class="yan_right">
-        <div class="yanquan">
-          <div></div>
-        </div>
-        <div class="yanquan_hedding">
-
-        </div>
-        <div class="hong"></div>
-      </div>
-      <div style="clear:both"></div>
-    </div>
-    <div class="bizi">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="zuiba_box">
-      <div class="zuiba">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-  </div>
-</div>
-     </div>
-     </form>
+    <%- include('components/search_plugin.ejs') %>
   </div>
 
   </header>
-<div class="fiexddiv">
+<div class="menu-wrap">
+</div>
+<div class="menu-cover-wrap"></div>
+<div class="fiexbddiv">
   <div class="w1200 artmain">
-  
-
-<div class="l-content">
+  <div class="l-content">
 
   <div class="layout-frame">
      <% posts.forEach(function (post) { %>
@@ -111,9 +65,24 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
- 
+ //menu侧滑
+ $("#menu_btn").on("click",function(){
+   if($(".menu-wrap").width()){
+    $(".menu-wrap").animate({width:'0'});
+    $("#menu_btn").animate({marginLeft:'0'});
+    $(".fiexbddiv").animate({marginLeft:'0'});
+    $(".menu-cover-wrap").hide();
+    $("body,html").css({"overflow":"auto"});
+   }else{
+    $(".menu-wrap").animate({width:'300px'});
+    $("#menu_btn").animate({marginLeft:'300px'});
+    $(".fiexbddiv").animate({marginLeft:'300px'})
+    $(".menu-cover-wrap").fadeIn();
+    $("body,html").css({"overflow":"hidden"});
+   }
+   
+ })
  //分页
-
  var p_co=parseInt(GetQueryString("page")?GetQueryString("page"):1);// 当前页数
  var p_t=<%-count%>//总的页数
  var co=10;//分页展示数
@@ -127,7 +96,7 @@ $(document).ready(function(){
 
  $("#page_id"+p_co).find(".iconfont").html("&#xe612;").css({"font-size":"42px","color":"white","left":"-50px"});
  $(".top_Page").find(".iconfont").html("&#xe63a;").css("font-size","23px");
-  $("#page_id"+p_co).css("color","white");
+ $("#page_id"+p_co).css("color","white");
  //右侧排行榜
  $.ajax({url:"/posts/readmore",async:false}).
   success(function(data){
