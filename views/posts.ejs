@@ -96,17 +96,27 @@
           <div class="chat-sectitle">
             <span>fnncat交流群</span>
           </div>
-          <div class="chat-exchangecon"></div>
+          <div id="historyMsg" class="chat-exchangecon"></div>
           <div class="chat-exchangebar">
-            <i class="iconfont">&#xe645;</i>
+            <i id="emoji" class="iconfont">&#xe645;</i>
             <i class="iconfont">&#xe61e;</i>
             <i class="iconfont">&#xe63f;</i>
-            <span> shit+空格 发送</span>
+            <i class="iconfont">&#xe60d;</i>
+            <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
+            <span id="sendBtn">发送</span>
           </div>
           <div class="chat-exchangesend">
-            <textarea></textarea>
+            <textarea id="messageInput"></textarea>
           </div>
         </div>
+        <div id="loginWrapper">
+         <p id="info">加入聊天</p>
+         <div id="nickWrapper">
+         <input type="text" placeHolder="取个名字吧" id="nicknameInput" />
+         <input type="button" value="OK" id="loginBtn" />
+        </div>
+        </div>
+      </div>
      </div>
 </div>
 
@@ -178,4 +188,6 @@ $(document).ready(function(){
   
 
 </script>
+<script src="lib/socket.io-client/dist/socket.io.js"></script>
+<script src="js/chat.js"></script>
 <%- include('footer') %>
