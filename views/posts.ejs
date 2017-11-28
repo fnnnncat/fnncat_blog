@@ -13,7 +13,33 @@
   </div>
 
   </header>
-<div class="menu-wrap">
+<div class="menu-wrap"> 
+  <div class="menu-items">
+  <div class="menu-item fir">
+    <a href="/posts"><i class="iconfont">&#xe602;</i>
+    <span>开始</span>
+    </a>
+  </div>
+  <div class="menu-item sec">
+    <a href="/posts">
+    <i class="iconfont">&#xe602;</i>
+    <span>旧时光</span>
+    </a>
+ </div> 
+   <div class="menu-item thr">
+     <a href="/posts">
+    <i class="iconfont">&#xe602;</i>
+    <span>总是</span>
+    </a>
+  </div>
+   <div class="menu-item for">
+     <a href="/posts">
+    <i class="iconfont">&#xe602;</i>
+    <span>很远</span>
+     </a>
+   </div>
+  </div>
+  <%- include('components/fnncat_1.ejs') %>
 </div>
 <div class="menu-cover-wrap"></div>
 <div class="fiexbddiv">
@@ -33,9 +59,6 @@
   </div>
 </div>
  <div class="r-content">
-  <div>
-    <h4>公告</h4>
-  </div>
 <!--    <div class="allTag">
     <h4>标签</h4>
     <div class="ovh">
@@ -54,10 +77,37 @@
   </div>
  -->
      <div class="readmore-content">
-        <h4 class="readmore-header">阅读排行</h4>
+        <h4 class="readmore-header">最受欢迎</h4>
         <div class="readmore-title"></div>
      </div>
-      <%- include('components/fnncat_1.ejs') %>
+ <!--     <div class="readtime-content">
+        <h4 class="readmore-header">时间过往</h4>
+        <div class="readtime-title">
+        </div>
+     </div> -->
+      <div class="chat-content">
+        <h4 class="readmore-header">聊天室</h4>
+        <div class="chat-wrap">
+          <div class="chat-title">
+            <i class="iconfont">&#xe672;</i>
+            <i class="iconfont">&#xe60c;</i>
+            <i class="iconfont">&#xe618;</i>
+          </div>
+          <div class="chat-sectitle">
+            <span>fnncat交流群</span>
+          </div>
+          <div class="chat-exchangecon"></div>
+          <div class="chat-exchangebar">
+            <i class="iconfont">&#xe645;</i>
+            <i class="iconfont">&#xe61e;</i>
+            <i class="iconfont">&#xe63f;</i>
+            <span> shit+空格 发送</span>
+          </div>
+          <div class="chat-exchangesend">
+            <textarea></textarea>
+          </div>
+        </div>
+     </div>
 </div>
 
 </div>
@@ -72,12 +122,20 @@ $(document).ready(function(){
     $("#menu_btn").animate({marginLeft:'0'});
     $(".fiexbddiv").animate({marginLeft:'0'});
     $(".menu-cover-wrap").hide();
+    $(".svg_fnncat").hide();
+    $(".menu-items").fadeOut();
+    $(".guide").fadeIn();
+    $(".search-form").fadeIn();
     $("body,html").css({"overflow":"auto"});
    }else{
-    $(".menu-wrap").animate({width:'300px'});
-    $("#menu_btn").animate({marginLeft:'300px'});
-    $(".fiexbddiv").animate({marginLeft:'300px'})
+    $(".menu-wrap").animate({width:'400px'});
+    $("#menu_btn").animate({marginLeft:'400px'});
+    $(".fiexbddiv").animate({marginLeft:'400px'})
+    $(".menu-items").fadeIn();
     $(".menu-cover-wrap").fadeIn();
+    $(".svg_fnncat").fadeIn();
+    $(".guide").fadeOut();
+    $(".search-form").fadeOut();
     $("body,html").css({"overflow":"hidden"});
    }
    
