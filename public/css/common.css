@@ -7,11 +7,11 @@
 /*cat font icon*/
 @font-face {
   font-family: 'iconfont';  /* project id 469120 */
-  src: url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.eot');
-  src: url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_469120_tp841y743yd2huxr.eot');
+  src: url('//at.alicdn.com/t/font_469120_tp841y743yd2huxr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_469120_tp841y743yd2huxr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_469120_tp841y743yd2huxr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_469120_tp841y743yd2huxr.svg#iconfont') format('svg');
 }
 @import url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.css');
 .iconfont{
@@ -250,12 +250,47 @@ header form{
 }
 .menu-wrap{
     height: 100%;
-    width: 0px;
+    width: 0;
     background: #fda870;
     position: absolute;
     z-index:999;
     top: 0;
     left: 0;
+    min-height: 800px;
+}
+.menu-wrap .menu-items{
+    width: 260px;
+    position: absolute;
+    top :160px;
+    left: 50px;
+    display: none;
+}
+.menu-wrap .menu-items .fir{
+    position: relative;
+   top:10px;
+}
+.menu-wrap .menu-items .sec{
+    position: relative;
+    top:50px;
+}
+.menu-wrap .menu-items .thr{
+    position: relative;
+    top: -10px;
+}
+.menu-wrap .menu-items .for{
+    position: relative;
+    top: 20px;
+}
+.menu-wrap .menu-item{
+    width: 20px;
+    height: 80px;
+    display: inline-block;
+    margin-left: 37px;
+    font-size: 20px;
+}
+.menu-wrap .menu-item i{
+    font-size: 20px;
+    margin-left: -20px;
 }
 .menu-cover-wrap{
     height: 100%;
@@ -637,8 +672,54 @@ a.cor0 {
     bottom: 8px;
     left: -30px;
 }
-.else-content{
-    height: 410px;
+.readtime-content{
+    height: 200px;
+}
+.chat-content{
+    height: 550px;
+}
+.chat-content .chat-wrap{
+    width: 380px;
+    height: 500px;
+    background-color: white;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.chat-title{
+    height: 23px;
+    background-color: #bfbfbf;
+}
+.chat-sectitle{
+   height: 20px; 
+   background-color: #e0e0e0;
+}
+.chat-sectitle span{
+   margin-left: 20px;
+}
+.chat-exchangecon{
+    height: 260px;
+    padding: 10px;
+}
+.chat-exchangebar{
+    height: 28px;
+    background-color: #e0e0e0;
+    line-height: 28px;
+}
+.chat-exchangebar i{
+    font-size: 24px;
+}
+.chat-exchangebar span{
+    float: right;
+    margin-right: 20px;
+}
+.chat-exchangesend{
+    height: 140px;
+}
+.chat-exchangesend textarea{
+    height: 140px;
+    width: 358px;
+    resize: none;
+    padding: 10px;
 }
 /* 详情页*/
 .all-width{
