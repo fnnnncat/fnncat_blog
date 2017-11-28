@@ -7,11 +7,11 @@
 /*cat font icon*/
 @font-face {
   font-family: 'iconfont';  /* project id 469120 */
-  src: url('//at.alicdn.com/t/font_469120_tp841y743yd2huxr.eot');
-  src: url('//at.alicdn.com/t/font_469120_tp841y743yd2huxr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_469120_tp841y743yd2huxr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_469120_tp841y743yd2huxr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_469120_tp841y743yd2huxr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_469120_pgqpfxel5uufecdi.eot');
+  src: url('//at.alicdn.com/t/font_469120_pgqpfxel5uufecdi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_469120_pgqpfxel5uufecdi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_469120_pgqpfxel5uufecdi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_469120_pgqpfxel5uufecdi.svg#iconfont') format('svg');
 }
 @import url('//at.alicdn.com/t/font_469120_e6jsxwml0x80k9.css');
 .iconfont{
@@ -700,6 +700,9 @@ a.cor0 {
     height: 260px;
     padding: 10px;
 }
+.chat-exchangebar i:hover{
+    color: #349fd2;
+}
 .chat-exchangebar{
     height: 28px;
     background-color: #e0e0e0;
@@ -707,6 +710,13 @@ a.cor0 {
 }
 .chat-exchangebar i{
     font-size: 24px;
+    cursor: pointer;
+}
+.chat-exchangebar input{
+    width: 26px;
+    position: relative;
+    left: -30px;
+    opacity: 0;
 }
 .chat-exchangebar span{
     float: right;
@@ -720,6 +730,16 @@ a.cor0 {
     width: 358px;
     resize: none;
     padding: 10px;
+}
+#loginWrapper {
+    position: relative;
+    height: 550px;
+    top: -550px;
+    background-color: rgba(5, 5, 5, .6);
+    text-align: center;
+    color: #fff;
+    display: block;
+    padding-top: 200px;
 }
 /* 详情页*/
 .all-width{

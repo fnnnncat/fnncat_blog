@@ -10,7 +10,9 @@ var winston = require('winston');
 var expressWinston = require('express-winston');
 
 var app = express();
-
+var server = require('http').createServer(app),
+    io = require('socket.io').listen(server),
+    users = [];
 // 设置模板目录
 app.set('views', path.join(__dirname, 'views'));
 // 设置模板引擎为 ejs
@@ -19,6 +21,35 @@ app.set('view engine', 'ejs');
 // 设置静态文件目录
 app.use(express.static(path.join(__dirname, 'public')));
 
+io.sockets.on('connection', function(socket) {
+    //监听新用户加入
+    socket.on('login', function(username) {
+        if (users.indexOf(username) > -1) {
+            socket.emit('nickExisted');
+        } else {
+            socket.username = username;
+            users.push(username);
+            socket.emit('loginSuccess');
+            io.sockets.emit('system', username, users.length, 'login');
+        };
+    });
+    //监听用户链接切断
+    socket.on('disconnect', function() {
+        if (socket.username != null) {
+            users.splice(users.indexOf(socket.username), 1);
+       //信息传输对象为所有的client，排除当前socket对应的client
+            socket.broadcast.emit('system', socket.username, users.length, 'logout');
+        }
+    });
+    //监听用户发布的聊天内容
+    socket.on('postMsg', function(msg, color) {
+        socket.broadcast.emit('newMsg', socket.username, msg, color);
+    });
+    //监听用户发布的聊天图片
+    socket.on('img', function(imgData, color) {
+        socket.broadcast.emit('newImg', socket.username, imgData, color);
+    });
+})
 // session 中间件
 app.use(session({
   name: config.session.key,// 设置 cookie 中保存 session id 的字段名称
@@ -92,7 +123,7 @@ if (module.parent) {
   module.exports = app;
 } else {
   // 监听端口，启动程序
-  app.listen(config.port, function () {
+  server.listen(config.port, function () {
     console.log(`${pkg.name} listening on port ${config.port}`);
   });
 }
