@@ -204,7 +204,7 @@ body .fn-hide {display:none;}
 .layout-framex { width: 49%; }
 /*首页*/
 header {
-    z-index: 999;
+    z-index: 222;
     width: 100%;
     background: white;
     position: fixed;
@@ -247,6 +247,25 @@ header .guide{
 header form{
     float: right;
     width: 300px;
+}
+.menu-wrap{
+    height: 100%;
+    width: 0px;
+    background: #fda870;
+    position: absolute;
+    z-index:999;
+    top: 0;
+    left: 0;
+}
+.menu-cover-wrap{
+    height: 100%;
+    width: calc(100% - 300px);
+    position: absolute;
+    top: 0;
+    left: 300px;
+    background: white;
+    opacity: .5;
+    display: none;
 }
 .artmain{
     margin-top: 57px;
