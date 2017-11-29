@@ -20,7 +20,8 @@ app.set('view engine', 'ejs');
 
 // 设置静态文件目录
 app.use(express.static(path.join(__dirname, 'public')));
-
+//soceket 连接
+io.set('transports', ['xhr-polling']);
 io.sockets.on('connection', function(socket) {
     //监听新用户加入
     socket.on('login', function(username) {
@@ -50,6 +51,7 @@ io.sockets.on('connection', function(socket) {
         socket.broadcast.emit('newImg', socket.username, imgData, color);
     });
 })
+
 // session 中间件
 app.use(session({
   name: config.session.key,// 设置 cookie 中保存 session id 的字段名称
