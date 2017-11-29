@@ -26,7 +26,7 @@ Chat.prototype = {
             if (document.getElementById('loginWrapper').style.display == 'none') {
                 document.getElementById('status').textContent = 'sorry,baby,链接不上哟';
             } else {
-                document.getElementById('info').textContent = 'baby链接不上哟';
+                document.getElementById('info').textContent = '连接不上';
             }
         });
         this.socket.on('system', function(nickName, userCount, type) {
