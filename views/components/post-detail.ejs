@@ -1,12 +1,14 @@
   <header>
    <div class="nav">
-      <a class="target"><i class="iconfont">&#xe632;</i><span>menu</span></a>
+      <a class="target menu_btn"><i class="iconfont">&#xe632;</i><span>menu</span></a>
 
   <div class="guide">
-    <a href="/">首页</a>&gt;<a href="/posts/<%= post._id %>"><%= post.title %></a>
+    <a href="/">Home Back<i class="iconfont">&#xe635;</i></a>
   </div>
      </div>
   </header>
+  <%- include('menu.ejs') %>
+<div class="fiexddiv_w"></div>
 <div class="fiexddiv">
   <div class="w1200 artmain">
 <div class="l-content all-width">
@@ -48,6 +50,31 @@
 
        e.parentNode.insertBefore(j, e);
    })(document, 'script');
+
+      //menu侧滑
+ $(".menu_btn").on("click",function(){
+   if($(".menu-wrap").width()){
+    $(".menu-wrap").animate({width:'0'});
+    $(".menu_btn").animate({marginLeft:'0'});
+    $(".fiexddiv_w").animate({width:'0'});
+    $(".menu-cover-wrap").hide();
+    $(".svg_fnncat").hide();
+    $(".menu-items").fadeOut();
+    $(".guide").fadeIn();
+    $("body,html").css({"overflow":"auto"});
+   }else{
+    $(".menu-wrap").animate({width:'400px'});
+    $(".menu_btn").animate({marginLeft:'400px'});
+    $(".fiexddiv_w").animate({width:'400px'})
+    $(".menu-items").fadeIn();
+    $(".menu-cover-wrap").fadeIn();
+    $(".svg_fnncat").fadeIn();
+    $(".guide").fadeOut();
+    $(".search-form").fadeOut();
+    $("body,html").css({"overflow":"hidden"});
+   }
+   
+ })
   </script>
 <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
 </div>
