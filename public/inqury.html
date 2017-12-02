@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>和你说说话</title>
+    <link rel="stylesheet" href="/css/common.css">
+</head>
+<body>
+      <div class="chat-content">
+        <h4 class="readmore-header">聊天室</h4>
+        <div class="chat-wrap">
+          <div class="chat-title">
+            <i class="iconfont">&#xe672;</i>
+            <i class="iconfont">&#xe60c;</i>
+            <i class="iconfont">&#xe618;</i>
+          </div>
+          <div class="chat-sectitle">
+            <span>fnncat交流群</span>
+            <span id="status">1 user online</span>
+          </div>
+          <div id="historyMsg" class="chat-exchangecon"></div>
+          <div class="chat-exchangebar">
+            <i id="emoji" class="iconfont">&#xe645;</i>
+            <i class="iconfont">&#xe61e;</i>
+            <i class="iconfont">&#xe63f;</i>
+            <i class="iconfont">&#xe60d;</i>
+            <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
+            <span id="sendBtn">发送</span>
+          </div>
+          <div class="chat-exchangesend">
+            <textarea id="messageInput"></textarea>
+          </div>
+        </div>
+        <div id="loginWrapper">
+         <p id="info">聊天室连接中...</p>
+         <div id="nickWrapper">
+         <input type="text" placeHolder="取个名字吧" id="nicknameInput" />
+         <input type="button" value="OK" id="loginBtn" />
+        </div>
+        </div>
+      </div>
+</body>
+
+<script type="text/javascript">
+	  // move the window to 0,0 (X,Y)
+  window.moveTo(0, 0);
+  // resize the window to 800x600
+  window.resizeTo(800, 600);
+</script>
+<script src="lib/socket.io-client/dist/socket.io.js"></script>
+<script src="js/chat.js"></script>
+</html>

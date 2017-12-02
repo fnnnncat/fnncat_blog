@@ -18,7 +18,7 @@ Chat.prototype = {
             document.getElementById('info').textContent = '亲爱滴，这个名字已经有了吼';
         });
         this.socket.on('loginSuccess', function() {
-            document.title = '聊天室 | ' + document.getElementById('nicknameInput').value;
+            document.title = 'fnncat | ' + document.getElementById('nicknameInput').value;
             document.getElementById('loginWrapper').style.display = 'none';
             document.getElementById('messageInput').focus();
         });

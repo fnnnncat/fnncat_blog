@@ -2,9 +2,9 @@
 <%- include('header') %>
   <header>
    <div class="nav">
-      <a id="menu_btn" class="target"><i class="iconfont">&#xe632;</i><span>menu</span></a>
+      <a id="menu_btn" class="target menu_btn"><i class="iconfont">&#xe632;</i><span>menu</span></a>
     <div class="guide">
-    <a href="/posts">fnncat 首页</a>
+    <a href="/posts">fnncat</a>
       <% if (searchParam!="all"&&searchParam!="") { %>
       <span>您搜索有关 <span class="hot"><%=searchParam%></span>如下</span>
    <% } %>
@@ -13,35 +13,7 @@
   </div>
 
   </header>
-<div class="menu-wrap"> 
-  <div class="menu-items">
-  <div class="menu-item fir">
-    <a href="/posts"><i class="iconfont">&#xe602;</i>
-    <span>开始</span>
-    </a>
-  </div>
-  <div class="menu-item sec">
-    <a href="/posts">
-    <i class="iconfont">&#xe602;</i>
-    <span>旧时光</span>
-    </a>
- </div> 
-   <div class="menu-item thr">
-     <a href="/posts">
-    <i class="iconfont">&#xe602;</i>
-    <span>总是</span>
-    </a>
-  </div>
-   <div class="menu-item for">
-     <a href="/posts">
-    <i class="iconfont">&#xe602;</i>
-    <span>很远</span>
-     </a>
-   </div>
-  </div>
-  <%- include('components/fnncat_1.ejs') %>
-</div>
-<div class="menu-cover-wrap"></div>
+  <%- include('components/menu.ejs') %>
 <div class="fiexbddiv">
   <div class="w1200 artmain">
   <div class="l-content">
@@ -77,7 +49,7 @@
   </div>
  -->
      <div class="readmore-content">
-        <h4 class="readmore-header">最受欢迎</h4>
+        <h4 class="readmore-header">Popular Article</h4>
         <div class="readmore-title"></div>
      </div>
  <!--     <div class="readtime-content">
@@ -85,49 +57,20 @@
         <div class="readtime-title">
         </div>
      </div> -->
-      <div class="chat-content">
-        <h4 class="readmore-header">聊天室</h4>
-        <div class="chat-wrap">
-          <div class="chat-title">
-            <i class="iconfont">&#xe672;</i>
-            <i class="iconfont">&#xe60c;</i>
-            <i class="iconfont">&#xe618;</i>
-          </div>
-          <div class="chat-sectitle">
-            <span>fnncat交流群</span>
-            <span id="status">1 user online</span>
-          </div>
-          <div id="historyMsg" class="chat-exchangecon"></div>
-          <div class="chat-exchangebar">
-            <i id="emoji" class="iconfont">&#xe645;</i>
-            <i class="iconfont">&#xe61e;</i>
-            <i class="iconfont">&#xe63f;</i>
-            <i class="iconfont">&#xe60d;</i>
-            <input id="colorStyle" type="color" placeHolder='#000' title="font color" />
-            <span id="sendBtn">发送</span>
-          </div>
-          <div class="chat-exchangesend">
-            <textarea id="messageInput"></textarea>
-          </div>
-        </div>
-        <div id="loginWrapper">
-         <p id="info">加入聊天</p>
-         <div id="nickWrapper">
-         <input type="text" placeHolder="取个名字吧" id="nicknameInput" />
-         <input type="button" value="OK" id="loginBtn" />
-        </div>
-        </div>
-      </div>
+
      </div>
 </div>
 
 </div>
 </div>
-
+<div class="inquiry-btn">
+  <img src="img/cat_index.png">
+  <span>Touch  Me</span>
+</div>
 <script type="text/javascript">
 $(document).ready(function(){
- //menu侧滑
- $("#menu_btn").on("click",function(){
+   //menu侧滑
+ $(".menu_btn").on("click",function(){
    if($(".menu-wrap").width()){
     $(".menu-wrap").animate({width:'0'});
     $("#menu_btn").animate({marginLeft:'0'});
@@ -186,9 +129,14 @@ $(document).ready(function(){
    }
 })
 
-  
+
+
+  //咨询弹出框
+  $(".inquiry-btn").on("click",function(){
+    window.open ('inqury.html')
+
+  })
 
 </script>
-<script src="lib/socket.io-client/dist/socket.io.js"></script>
-<script src="js/chat.js"></script>
+
 <%- include('footer') %>
