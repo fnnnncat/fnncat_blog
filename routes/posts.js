@@ -46,13 +46,13 @@ router.get('/pagestotal', function(req, res, next) {
     .catch(next);
 });
 //搜索内容展示
-router.get('/search',function(req,res,next){
+router.get('/searchParam',function(req,res,next){
   var author = req.query.author;
   var searchParam=req.query.searchParam;
   var page=req.query.page;
   Promise.all(
     [ PostModel.getPostsByParam(author,searchParam,page),
-      PostModel.getPostsCountByParm(searchParam)
+      PostModel.getPostsCountByParam(searchParam)
     ])
     .then(function (result) {
      var posts = result[0];
@@ -60,6 +60,31 @@ router.get('/search',function(req,res,next){
      res.render('posts', {
       posts: posts,
       searchParam:searchParam,
+      count: Math.ceil(count/5)
+    });
+    })
+    .catch(next);
+
+});
+//tags展示内容
+router.get('/searchParamType',function(req,res,next){
+  console.log("----------------------------------------------------------");
+  console.log(req.query);
+  var author = req.query.author;
+  var searchParamType=req.query.searchParamType;
+  var page=req.query.page;
+  Promise.all(
+    [ PostModel.getPostsByParamType(author,searchParamType,page),
+      PostModel.getPostsCountByParamType(searchParamType)
+    ])
+    .then(function (result) {
+     var posts = result[0];
+     console.log("sssssssssssssssssss");
+     console.log(result);
+     var count = result[1];
+     res.render('posts', {
+      posts: posts,
+      searchParamType:searchParamType,
       count: Math.ceil(count/5)
     });
     })

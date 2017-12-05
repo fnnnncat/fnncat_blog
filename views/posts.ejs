@@ -5,9 +5,7 @@
       <a id="menu_btn" class="target menu_btn"><i class="iconfont">&#xe632;</i><span>menu</span></a>
     <div class="guide">
     <a href="/posts">fnncat</a>
-      <% if (searchParam!="all"&&searchParam!="") { %>
-      <span>您搜索有关 <span class="hot"><%=searchParam%></span>如下</span>
-   <% } %>
+   
  </div>
     <%- include('components/search_plugin.ejs') %>
   </div>
@@ -31,40 +29,70 @@
   </div>
 </div>
  <div class="r-content">
-<!--    <div class="allTag">
-    <h4>标签</h4>
+   <div class="allTag">
+    <h4 class="readmore-header">Hot Tags</h4>
     <div class="ovh">
-    <a href="/posts/search?searchParamType='nodejs'" class="cor0">nodejs</a>
-    <a href="/posts/search?searchParamType='工作积累'" class="cor1">工作积累</a>
-    <a href="/posts/search?searchParamType='javascript'" class="cor2">javascript</a>
-    <a href="/posts/search?searchParamType='随笔'" class="cor3">随笔</a>
-    <a href="/posts/search?searchParamType='css'" class="cor4">css</a>
-    <a href="/posts/search?searchParamType='兼容性'" class="cor5">兼容性</a>
-    <a href="/posts/search?searchParamType='网络'" class="cor6">网络</a>
-    <a href="/posts/search?searchParamType='算法'" class="cor7">算法</a>
-    <a href="/posts/search?searchParamType='碎碎念'" class="cor8">碎碎念</a>
-    <a href="/posts/search?searchParamType='工具'" class="cor9">工具</a>
-    <a href="/posts/search?searchParamType='老站内容'" class="cor10">老站内容</a>
+    <a href="/posts/searchParamType?searchParamType=javascript" class="cor0">javascript</a>
+    <a href="/posts/searchParamType?searchParamType=工作积累" class="cor1">工作积累</a>
+    <a href="/posts/searchParamType?searchParamType=数据库" class="cor2">数据库</a>
+    <a href="/posts/searchParamType?searchParamType=框架类" class="cor3">框架类</a>
+    <a href="/posts/searchParamType?searchParamType=css" class="cor4">css</a>
+    <a href="/posts/searchParamType?searchParamType=兼容性" class="cor5">兼容性</a>
+    <a href="/posts/searchParamType?searchParamType=算法" class="cor7">算法</a>
+    <a href="/posts/searchParamType?searchParamType=随意说" class="cor8">随意说</a>
+    <a href="/posts/searchParamType?searchParamType=工具" class="cor9">工具</a>
+    <a href="/posts/searchParamType?searchParamType=nodejs" class="cor10">nodejs</a>
     </div>
   </div>
- -->
+
      <div class="readmore-content">
         <h4 class="readmore-header">Popular Article</h4>
         <div class="readmore-title"></div>
      </div>
- <!--     <div class="readtime-content">
-        <h4 class="readmore-header">时间过往</h4>
-        <div class="readtime-title">
+    <div class="readtime-content">
+        <h4 class="readmore-header">Archives Of Essays</h4>
+        <div class="readtime-items">
+         <a href=""><i class="iconfont">&#xe63f;</i>2015-09</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2015-10</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2015-11</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2015-12</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2016-01</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2016-02</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2016-03</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2016-04</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2016-05</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2016-06</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2016-07</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2016-08</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2016-09</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2016-10</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2016-11</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2016-12</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2017-01</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2017-02</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2017-03</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2017-04</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2017-05</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2017-06</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2017-07</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2017-08</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2017-09</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2017-10</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2017-11</a>
+         <a href=""><i class="iconfont">&#xe63f;</i>2017-12</a>
         </div>
-     </div> -->
-
+     </div>
+      <div class="readnotice-content">
+        <h4 class="readmore-header">Announcement</h4>
+        <p>2017年底，fnncat从<a href="http://www.cnblogs.com/fnncat/">博客园</a>迁入目前小站，sometime我会挂在右侧的小猫上，欢迎提建议。</p>
+     </div>
      </div>
 </div>
 
 </div>
 </div>
 <div class="inquiry-btn">
-  <img src="img/cat_index.png">
+  <img id="inquiry-img">
   <span>Touch  Me</span>
 </div>
 <script type="text/javascript">
@@ -101,10 +129,22 @@ $(document).ready(function(){
  var realco=(co<p_t)?co:p_t;//如果小于展示数 
  var count_s=(realco<10)?2:((p_co<5)?2:((p_co>p_t-5)?p_t-9:p_co-3));
  var count_e=(realco<10)?realco:((p_co<5)?co:((p_co>p_t-5)?p_t-1:p_co+5));
+ var search_val="";
+ var searchType="";
+ if(GetQueryString("searchParam")){
+    search_val="&&searchParam="+GetQueryString("searchParam");
+    searchType="searchParam";
+  }else if(GetQueryString("searchParamType")){
+    search_val="&&searchParamType="+GetQueryString("searchParamType");
+    searchType="searchParamType";
+  }else{
+    search_val="";
+    searchType="";
+  }
  for (var i = count_e; i >=count_s; i--) {
-    $('.top_Page').after("<span class='page_span_"+i+" pagination'><a id='page_id"+i+"' href='/posts/search?page="+i+"&&searchParam=<%-searchParam%>'>"+i+"<i class='iconfont page_icon'>&#xe63a;</i></a></span>");
+    $('.top_Page').after("<span class='page_span_"+i+" pagination'><a id='page_id"+i+"'href='/posts/"+searchType+"?page="+i+search_val+"'>"+i+"<i class='iconfont page_icon'>&#xe63a;</i></a></span>");
     }
- $('.bot_page').append("<a href='/posts/search?page="+<%-count%>+"&&searchParam=<%-searchParam%>'><i class='iconfont page_icon'>&#xe605;</i>end</a>");
+ $('.bot_page').append("<a href='/posts/"+searchType+"?page="+<%-count%>+search_val+"'><i class='iconfont page_icon'>&#xe605;</i>end</a>");
 
  $("#page_id"+p_co).find(".iconfont").html("&#xe612;").css({"font-size":"42px","color":"white","left":"-50px"});
  $(".top_Page").find(".iconfont").html("&#xe63a;").css("font-size","23px");
@@ -118,9 +158,19 @@ $(document).ready(function(){
     })
      
   });
+ //右侧时间框
+ $.ajax({url:"/posts/readtime",async:false}).
+  success(function(data){
+    console.log()
+     
+  });
   $(".search_cat").on("click",function(){
     $(".searchB").click();
   })
+  //inqury-btn图片路径
+  var urlImg=window.location.href.slice(0,21)+'/img/cat_index.png';
+  console.log(urlImg)
+  $("#inquiry-img").attr("src",urlImg);
   function GetQueryString(name)
   {
      var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
@@ -129,11 +179,9 @@ $(document).ready(function(){
    }
 })
 
-
-
   //咨询弹出框
   $(".inquiry-btn").on("click",function(){
-    window.open ('inqury.html')
+    window.open (window.location.href.slice(0,21)+'/inqury.html')
 
   })
 

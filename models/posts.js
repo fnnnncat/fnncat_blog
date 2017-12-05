@@ -128,10 +128,33 @@ module.exports = {
       .contentToHtml()
       .exec();
   },
-  getPostsCountByParm:function getPostsCountByParm(searchParam){
+  getPostsByParamType:function getPostsByParamType(author,searchParamType,page){
+    var query={};
+    if(author){
+      query.author=author;
+    }
+    var pattern = new RegExp(searchParamType, "i");
+    return Post
+      .find({"label": pattern})
+      .skip((page-1)*5)
+      .limit(5)
+      .populate({ path: 'author', model: 'User' })
+      .sort({ creat_time:-1,_id: -1 })
+      .addCreatedAt()
+      .addCommentsCount()
+      .contentToHtml()
+      .exec();
+  },
+  getPostsCountByParam:function getPostsCountByParam(searchParam){
     var pattern =new RegExp(searchParam,"i");
     return Post
      .count({"title":pattern})
+     .exec();
+  },
+  getPostsCountByParamType:function getPostsCountByParam(searchParamType){
+    var pattern =new RegExp(searchParamType,"i");
+    return Post
+     .count({"label":pattern})
      .exec();
   },
   // 通过文章 id 给 pv 加 1
