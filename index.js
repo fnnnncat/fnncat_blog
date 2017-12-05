@@ -26,7 +26,7 @@ io.sockets.on('connection', function(socket) {
     //监听新用户加入
     socket.on('login', function(username) {
         if (users.indexOf(username) > -1) {
-            socket.emit('nickExisted');
+            socket.emit('Existed');
         } else {
             socket.username = username;
             users.push(username);
@@ -38,7 +38,7 @@ io.sockets.on('connection', function(socket) {
     socket.on('disconnect', function() {
         if (socket.username != null) {
             users.splice(users.indexOf(socket.username), 1);
-       //信息传输对象为所有的client，排除当前socket对应的client
+            //信息传输对象为所有的client，排除当前socket对应的client
             socket.broadcast.emit('system', socket.username, users.length, 'logout');
         }
     });

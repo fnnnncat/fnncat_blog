@@ -68,8 +68,6 @@ router.get('/searchParam',function(req,res,next){
 });
 //tags展示内容
 router.get('/searchParamType',function(req,res,next){
-  console.log("----------------------------------------------------------");
-  console.log(req.query);
   var author = req.query.author;
   var searchParamType=req.query.searchParamType;
   var page=req.query.page;
@@ -107,6 +105,7 @@ router.post('/', checkLogin, function(req, res, next) {
   var icon = req.fields.icon;
   var label = req.fields.label;
   var param_type=req.fields.param_type;
+  var contentintro=req.fields.contentintro;
 
   // 校验参数
   try {
@@ -129,7 +128,8 @@ router.post('/', checkLogin, function(req, res, next) {
     label:label,
     pv: 0,
     creat_time:new Date().Format("yyyy-MM-dd hh:mm:ss"),
-    param_type:param_type
+    param_type:param_type,
+    contentintro:contentintro
   };
  
 
@@ -200,8 +200,9 @@ router.post('/:postId/edit', checkLogin, function(req, res, next) {
   var icon = req.fields.icon;
   var label = req.fields.label;
   var param_type=req.fields.param_type;
+  var contentintro=req.fields.contentintro;
 
-  PostModel.updatePostById(postId, author, { title: title, content: content,icon:icon,label:label,param_type:param_type})
+  PostModel.updatePostById(postId, author, { title: title, content: content,icon:icon,label:label,param_type:param_type,contentintro:contentintro})
     .then(function () {
       req.flash('success', '编辑文章成功');
       // 编辑成功后跳转到上一页
