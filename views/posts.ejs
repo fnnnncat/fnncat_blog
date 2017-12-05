@@ -152,7 +152,6 @@ $(document).ready(function(){
  //右侧排行榜
  $.ajax({url:"/posts/readmore",async:false}).
   success(function(data){
-    console.log(data);
     data.post_readmore.forEach(function(key,index){
        $(".readmore-title").append("<p><a href='/posts/"+data.post_readmore[index]._id+"'><i class='iconfont readmore_icon'>&#xe622;</i><i class='readmore_index'>"+(index+1)+"</i><span class='titlem'>"+data.post_readmore[index].title+"</span><span>阅读量："+data.post_readmore[index].pv+"</span></a></p>");
     })
@@ -168,7 +167,7 @@ $(document).ready(function(){
     $(".searchB").click();
   })
   //inqury-btn图片路径
-  var urlImg=window.location.href.slice(0,21)+'/img/cat_index.png';
+  var urlImg=window.location.href.split('posts')[0]+'/img/cat_index.png';
   console.log(urlImg)
   $("#inquiry-img").attr("src",urlImg);
   function GetQueryString(name)

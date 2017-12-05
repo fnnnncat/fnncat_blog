@@ -98,11 +98,20 @@ Chat.prototype = {
             msgToDisplay = document.createElement('p'),
             date = new Date().toTimeString().substr(0, 8)
             //determine whether the msg contains emoji
-            
+        if(user=="me"){
+        var innerHTMLMsg= '<div class="local-msg"><p><span class="timespan">' + date + ' </span></p><img class="msg-photo" src="../img/cat_photo.jpg"><div class="msg">'+msg+'</div></div>';
+        }else if(user=="system "){
+        var innerHTMLMsg= '<div class=""><span>系统提示<span><div class="msg">'+msg+'</div></div>';
+        }else{
+        var innerHTMLMsg= '<div class="local-umsg"><p><span class="timespan">' + date + ' </span></p><span class="user-name">'+user+'</span><div class="msg">'+msg+'</div></div>';
+
+        }
         msgToDisplay.style.color = color || '#000';
-        msgToDisplay.innerHTML = user + '<span class="timespan">(' + date + '): </span>' + msg;
+        msgToDisplay.innerHTML =innerHTMLMsg;
         container.appendChild(msgToDisplay);
         container.scrollTop = container.scrollHight;
+        var div = document.getElementById('historyMsg');
+        div.scrollTop = div.scrollHeight;
     },
     _displayImage: function(user, imgData, color) {
         var container = document.getElementById('historyMsg'),

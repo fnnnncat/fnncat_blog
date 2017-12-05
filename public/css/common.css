@@ -831,6 +831,7 @@ em.recommend {
     text-overflow: ellipsis;
     text-indent: 2em;
     margin-top: 8px;
+    color: #999;
 }
 
 .cont>div>p {
@@ -853,9 +854,9 @@ em.recommend {
     font-size: 12px;
     margin-right: 10px;
     padding: 0 5px;
-    border: 1px solid #999;
+    border: 1px solid #9a623c;
     border-radius: 2px;
-    color: #999;
+    color:#9a623c;
 }
 
 .pagepagin-list {
@@ -1260,15 +1261,12 @@ a.cor10 {
 }
 
 .chat-content .chat-wrap {
-    width: 380px;
-    height: 500px;
+    width: 680px;
+    height: 600px;
     background-color: white;
     margin: 0 auto;
     margin-top: 10px;
 }
-
-}
-
 .chat-title {
 height: 23px;
 background-color: #bfbfbf;
@@ -1284,8 +1282,9 @@ margin-left: 20px;
 }
 
 .chat-exchangecon {
-height: 260px;
+height: 360px;
 padding: 10px;
+overflow-y: scroll;
 }
 
 .chat-exchangebar i:hover {
@@ -1315,17 +1314,77 @@ float: right;
 margin-right: 20px;
 }
 
-.chat-exchangesend {
+.chat-exchangesend{
 height: 140px;
 }
 
 .chat-exchangesend textarea {
 height: 140px;
-width: 358px;
+width: 658px;
 resize: none;
 padding: 10px;
 }
-
+.chat-exchangecon .local-msg {
+    height: 60px;
+}
+.chat-exchangecon .local-msg p{
+height: 30px;
+}
+.chat-exchangecon .local-msg img{
+    height: 40px;
+    width: 40px;
+    float: right;
+    border-radius: 50%;  
+}
+.chat-exchangecon .local-msg p span{
+    float: right;
+    color: #ccc;
+}
+.chat-exchangecon .local-msg .msg{
+    float: right;
+    padding: 2px 14px;
+    color: white;
+    /* margin-top: 20px; */
+    margin-right: 20px;
+    -webkit-border-radius: 20px 20px 0 20px;
+    border-radius: 20px 20px 0 20px;
+    -webkit-box-shadow: 5px 5px 15px 0 rgba(102,102,102,0.15);
+    box-shadow: 5px 5px 15px 0 rgba(102,102,102,0.15);
+    background: linear-gradient(20deg, #3FD1E1 0%, #44D7CD 100%);
+}
+.chat-exchangecon .local-umsg {
+    height: 80px;
+}
+.chat-exchangecon .local-umsg p{
+height: 30px;
+}
+.chat-exchangecon .local-umsg .user-name{
+    height: 40px;
+    width: 40px;
+    float: left;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    border: solid;
+    text-align: center;
+    line-height: 40px;
+}
+.chat-exchangecon .local-umsg p span{
+    float: left;
+    color: #ccc;
+}
+.chat-exchangecon .local-umsg .msg{
+    float: left;
+    padding: 2px 14px;
+    color: white;
+    /* margin-top: 20px; */
+    margin-right: 20px;
+    -webkit-border-radius: 0px 20px 20px 20px;
+    border-radius: 0px 20px 20px 20px;
+    -webkit-box-shadow: 5px 5px 15px 0 rgba(102,102,102,0.15);
+    box-shadow: 5px 5px 15px 0 rgba(102,102,102,0.15);
+    background: linear-gradient(20deg, #3FD1E1 0%, #44D7CD 100%);
+}
 #loginWrapper {
 position: relative;
 height: 550px;
