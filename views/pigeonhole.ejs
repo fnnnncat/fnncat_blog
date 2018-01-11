@@ -1,0 +1,50 @@
+<%- include('header') %>
+  <header>
+   <div class="nav">
+      <a id="menu_btn" class="target menu_btn"><i class="iconfont">&#xe632;</i><span>menu</span></a>
+    <div class="guide">
+    <a href="/posts">fnncat</a>
+   
+  </div>
+    <%- include('components/search_plugin.ejs') %>
+  </div>
+  </header>
+  <%- include('components/menu.ejs') %>
+  
+  <div class="pige-content">
+  	<div class="pige-header">时光归档</div>
+  	<div class="pige-wrapper">
+  		 <% posts.forEach(function (post) { %>
+  		 <a href="/posts/<%= post._id %>"><span class="fir"><%- post.creat_time.slice(0,11)%></span><span class="sec"><%- post.title%></span>  </a>
+ 
+<% }) %>
+  	</div>
+  </div>
+
+<%- include('footer') %>
+  <script type="text/javascript">
+      //menu侧滑
+ $(".menu_btn").on("click",function(){
+   if($(".menu-wrap").width()){
+    $(".menu-wrap").animate({width:'0'});
+    $(".menu_btn").animate({marginLeft:'0'});
+    $(".fiexddiv_w").animate({width:'0'});
+    $(".menu-cover-wrap").hide();
+    $(".svg_fnncat").hide();
+    $(".menu-items").fadeOut();
+    $(".guide").fadeIn();
+    $("body,html").css({"overflow":"auto"});
+   }else{
+    $(".menu-wrap").animate({width:'400px'});
+    $(".menu_btn").animate({marginLeft:'400px'});
+    $(".fiexddiv_w").animate({width:'400px'})
+    $(".menu-items").fadeIn();
+    $(".menu-cover-wrap").fadeIn();
+    $(".svg_fnncat").fadeIn();
+    $(".guide").fadeOut();
+    $(".search-form").fadeOut();
+    $("body,html").css({"overflow":"hidden"});
+   }
+   
+ })
+  </script>
