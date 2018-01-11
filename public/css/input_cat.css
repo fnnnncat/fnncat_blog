@@ -246,8 +246,8 @@
 
     display: none;
     position: absolute;
-    bottom: 20px;
-    left: 120px;
+    bottom: 40px;
+    left: 500px;
   }
   #svg_14 {
         animation: animation 5s infinite cubic-bezier(.34,1.61,.7,1);
