@@ -5,6 +5,7 @@
 }
 
 
+
 /*cat font icon*/
 
 @font-face {
@@ -25,13 +26,17 @@
     padding-left: 20px
 }
 
-html{
-     height: 1600px;
-    background:url(../img/pages/background.jpg);
-    background-size: cover;
+html {
+    background: url(../img/pages/background1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
     font-family: web-font;
+    height: 100%;
 }
-body{
+
+body {
+    height: 100%;
     width: 100%;
 }
 
@@ -123,6 +128,7 @@ video {
 }
 
 
+
 /* 要注意表单元素并不继承父级 font 的问题 */
 
 body,
@@ -138,6 +144,7 @@ select,
 textarea {
     font-size: 100%;
 }
+
 
 
 /*去除输入框的叉号*/
@@ -256,6 +263,7 @@ p {
 }
 
 
+
 /* 清理浮动 */
 
 .fn-clear:after {
@@ -273,11 +281,13 @@ p {
 }
 
 
+
 /* 隐藏, 通常用来与 JS 配合 */
 
 body .fn-hide {
     display: none;
 }
+
 
 
 /* 设置内联, 减少浮动带来的bug */
@@ -296,6 +306,7 @@ body .fn-hide {
 }
 
 
+
 /* 单行文字溢出时出现省略号，需设定宽度 */
 
 .fn-text-overflow {
@@ -305,6 +316,7 @@ body .fn-hide {
 }
 
 
+
 /* 人民币符号 */
 
 .fn-rmb {
@@ -312,6 +324,7 @@ body .fn-hide {
     font-style: normal;
     padding-right: 4px;
 }
+
 
 
 /* 文字两端对齐 */
@@ -329,6 +342,7 @@ body .fn-hide {
 }
 
 
+
 /* position */
 
 .fn-pr {
@@ -342,6 +356,7 @@ body .fn-hide {
 .fn-pf {
     position: fixed;
 }
+
 
 
 /* font */
@@ -396,6 +411,7 @@ body .fn-hide {
 }
 
 
+
 /* box */
 
 .fn-inlinBlock {
@@ -419,6 +435,7 @@ body .fn-hide {
 .fn-mg10 {
     margin: 10px;
 }
+
 
 
 /* margin */
@@ -532,6 +549,7 @@ body .fn-hide {
 }
 
 
+
 /* padding */
 
 .pt-5 {
@@ -631,6 +649,7 @@ body .fn-hide {
 }
 
 
+
 /* width&height */
 
 .w100 {
@@ -684,6 +703,7 @@ body .fn-hide {
 }
 
 
+
 /*手势*/
 
 .cur-default {
@@ -695,6 +715,7 @@ body .fn-hide {
 }
 
 
+
 /*公共行高*/
 
 .line-height-20 {
@@ -704,6 +725,7 @@ body .fn-hide {
 .line-height-30 {
     line-height: 30px;
 }
+
 
 
 /*公用布局样式*/
@@ -733,6 +755,7 @@ body .fn-hide {
 }
 
 
+
 /*首页*/
 
 header {
@@ -743,6 +766,7 @@ header {
     top: 0;
     left: 0;
     height: 60px;
+    opacity: .7;
 }
 
 header .nav {
@@ -837,8 +861,9 @@ header:before {
     left: 50px;
     display: none;
 }
-.menu-items-header >img{
-        width: 180px;
+
+.menu-items-header>img {
+    width: 180px;
     border-radius: 50%;
     margin-left: 50px;
     margin-top: -50px;
@@ -1315,6 +1340,7 @@ a.cor10 {
 }
 
 
+
 /*阅读排行榜*/
 
 .readmore-content {
@@ -1370,6 +1396,7 @@ a.cor10 {
 }
 
 
+
 /*readtime-content*/
 
 .readtime-content {
@@ -1400,6 +1427,7 @@ a.cor10 {
     padding: 0;
     margin: 0;
 }
+
 
 
 /*Announcement*/
@@ -1591,6 +1619,7 @@ a.cor10 {
 }
 
 
+
 /* 详情页*/
 
 .all-width {
@@ -1628,6 +1657,7 @@ a.cor10 {
     text-align: right;
     padding-right: 20px;
 }
+
 
 
 /*编辑页*/
@@ -1701,12 +1731,24 @@ img.avatar {
     font-size: 34px;
     margin-bottom: 20px;
 }
-.pige-content a{
+
+.pige-content a {
     display: block;
     font-size: 18px;
     color: rgb(88, 88, 88);
     margin-bottom: 10px;
 }
-.pige-content .fir{
+
+.pige-content .fir {
     margin-right: 20px;
+}
+
+.footer {
+    overflow: hidden;
+    width: 100%;
+    padding: 13px 0 6px 0;
+    border-top: 2px solid #ddd;
+    text-align: center;
+    font-size: 12px;
+    color: #858585;
 }
