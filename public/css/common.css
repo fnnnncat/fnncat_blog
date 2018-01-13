@@ -1729,6 +1729,7 @@ img.avatar {
     background: #ffffff;
     /* padding-top: 21px; */
     /* padding-bottom: 21px; */
+        opacity: .8;
     border-radius: 10px;
     transition: all 0.28s;
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, .15);
