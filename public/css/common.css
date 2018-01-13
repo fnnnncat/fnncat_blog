@@ -916,7 +916,15 @@ header:before {
     display: none;
     z-index: 300;
 }
-
+.menu-cover-wrap .text{
+    z-index: 3000;
+    font-size: 18px;
+    color: rgb(88, 88, 88);
+    position: absolute;
+    bottom: 120px;
+    left: 220px;
+    background-color: rgba(255, 255, 255, 0);
+}
 .artmain {
     margin-top: 90px;
 }
