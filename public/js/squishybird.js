@@ -1,5 +1,4 @@
-document.body.style.margin = '0px';
-document.body.style.overflow = 'hidden';
+
 
 var raf = function (x) { alert('Your browser is not compatible with this site. Sorry :('); }
 if (window.requestAnimationFrame) raf = window.requestAnimationFrame;       // Firefox 23 / IE 10 / Chrome / Safari 7 (incl. iOS)
