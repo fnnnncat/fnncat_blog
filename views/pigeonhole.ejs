@@ -34,6 +34,7 @@
     $(".menu-items").fadeOut();
     $(".guide").fadeIn();
     $("body,html").css({"overflow":"auto"});
+    $(".menu_btn span").text("menu");
    }else{
     $(".menu-wrap").animate({width:'400px'});
     $(".menu_btn").animate({marginLeft:'400px'});
@@ -44,6 +45,7 @@
     $(".guide").fadeOut();
     $(".search-form").fadeOut();
     $("body,html").css({"overflow":"hidden"});
+    $(".menu_btn span").text("back");
    }
    
  })
