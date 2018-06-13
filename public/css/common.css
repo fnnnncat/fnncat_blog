@@ -853,7 +853,20 @@ header:before {
     left: 0;
     min-height: 800px;
 }
-
+.menu-weibo-wrap{
+    width: 190px;
+    padding: 20px;
+    margin: 0 auto;
+}
+.menu-weibo{
+    height: 30px;
+    position: relative;
+    top: 4px;
+    margin-right: 6px;
+}
+.menu-weibo-wrap span{
+    font-size: 18px;
+}
 .menu-wrap .menu-items {
     width: 260px;
     position: absolute;
